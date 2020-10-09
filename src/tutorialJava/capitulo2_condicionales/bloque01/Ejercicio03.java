@@ -1,4 +1,4 @@
-package tutorialJava.capitulo2_condicionales.bloque02;
+package tutorialJava.capitulo2_condicionales.bloque01;
 
 import javax.swing.JOptionPane;
 
