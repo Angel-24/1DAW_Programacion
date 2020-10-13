@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Ejercicio02 {
 
 	public static void main(String[] args) {
-		
+
 		int var;
 		int suma = 0;
 		String limite = JOptionPane.showInputDialog("¿Cuántos números se van a introducir?: ");
