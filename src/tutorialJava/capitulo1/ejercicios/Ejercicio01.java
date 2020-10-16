@@ -2,7 +2,7 @@ package tutorialJava.capitulo1.ejercicios;
 
 import javax.swing.JOptionPane;
 
-public class Bloque01Ejercicio01 {
+public class Ejercicio01 {
 	
 	/*
 	 1º.-Realiza un programa que pida al usuario tres números: uno de tipo entero, 
@@ -24,8 +24,7 @@ public class Bloque01Ejercicio01 {
 		
 		System.out.println("El número entero es: " + numEntero + 
 				"\nEl número flotante es: " + numFlotante + 
-				"\nEl número dobule es: " + numDouble);
-		
+				"\nEl número double es: " + numDouble);
 	}
 
 }
