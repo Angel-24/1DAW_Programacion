@@ -3,27 +3,26 @@ package tutorialJava.capitulo1.ejercicios;
 import javax.swing.JOptionPane;
 
 public class Ejercicio06 {
-	
-	/*
-	 1º.-Realiza un programa que pida al usuario tres números: uno de tipo entero, 
-	 otro de tipo flotante y otro de tipo doble. A continuación se tienen que mostrar 
-	 en pantalla los tres números en una sola fila de la consola de salida.
-	  */
 
 	public static void main(String[] args) {
-		int num1;
-		int num2;
+		float euribor;
+		float diferencial;
+		float capital;
+		float plazos;
+//		int ;
 		
-		String str = JOptionPane.showInputDialog("Introduce un número: ");
-		num1 = Integer.parseInt(str);
-		str = JOptionPane.showInputDialog("Introduce otro número: ");
-		num2 = Integer.parseInt(str);
-		System.out.println("Las variables introducidas son: " + num1 + " y " + num2);
+		String str = JOptionPane.showInputDialog("Euribor: ");
+		euribor = Float.parseFloat(str);
+		str = JOptionPane.showInputDialog("Diferencial: ");
+		diferencial = Float.parseFloat(str);
+		str = JOptionPane.showInputDialog("Capital: ");
+		capital = Float.parseFloat(str);
+		str = JOptionPane.showInputDialog("Plazos: ");
+		plazos = Float.parseFloat(str);
 		
-		int numA = num1;
-		num1 = num2;
-		num2 = numA;
+		float interesAnual = capital * (euribor + diferencial);
+		float interesMensual = (interesAnual / plazos) / (plazos - 1);
 		
-		System.out.println("Y las variables con los valores intercambiados: " + num1 + " y " + num2);	
+		System.out.println("El interés mensual es: " + interesMensual);
 	}
 }
