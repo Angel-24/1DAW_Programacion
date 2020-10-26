@@ -7,29 +7,26 @@ public class Ejercicio06 {
 	public static void main(String[] args) {
 
 		int var = 0;
-		int menor = 0;
-		int mayor = 0;
-//		String limite = JOptionPane.showInputDialog("¿Cuántos números se van a introducir?: ");
-		for (int i = 0; i >= 0; i++) {
-			if (var == 0 & i >= 1) {
-				System.out.println(
-						"El mayor número introducido es: " + mayor + ", mientras que el menor es: " + menor + ".");
-				break;
-			}
-			else { if (var != 0 | i == 0) {
-					String str = JOptionPane.showInputDialog("Introduzca un número: ");
-					var = Integer.parseInt(str);
-					if (var < menor && var != 0) {
-						menor = var;
+		for (int v = 0; var != 0 | v == 0; v++) {
+			var = 0;
+			int resultado = 0;
+			String str = JOptionPane.showInputDialog("Tabla de multiplicar de: ");
+			var = Integer.parseInt(str);
+			if (var != 0) {
+				for (int i = 0; i >= 0; i++) {
+					resultado = var * i;
+					if (var != 0 && i == 0) {
+						System.out.println("Tabla de multiplicar de " + var);
 					}
-					if (var > mayor) {
-						mayor = var;
+					if (var != 0 && i <= 10) {
+						System.out.println(var + " * " + i + " = " + resultado);
 					}
-					if (menor == 0) {
-						menor = mayor;
+					if (var != 0 && i == 10) {
+						System.out.println("\n");
 					}
 				}
-			}
+			} else
+				;
 		}
 	}
 }
