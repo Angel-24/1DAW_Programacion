@@ -2,7 +2,7 @@ package tutorialJava.capitulo3.bloque3;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio05 {
+public class Ejercicio06 {
 
 	public static void main(String[] args) {
 

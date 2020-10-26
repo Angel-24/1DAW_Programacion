@@ -2,7 +2,7 @@ package tutorialJava.capitulo3.bloque3;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio05 {
+public class Ejercicio04 {
 
 	public static void main(String[] args) {
 
@@ -13,7 +13,7 @@ public class Ejercicio05 {
 		for (int i = 0; i >= 0; i++) {
 			if (var == 0 & i >= 1) {
 				System.out.println(
-						"El mayor número introducido es: " + mayor + ", mientras que el menor es: " + menor + ".");
+						"El menor número introducido es: " + menor + ".");
 				break;
 			}
 			else { if (var != 0 | i == 0) {
