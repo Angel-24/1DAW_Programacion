@@ -1,8 +1,10 @@
 package tutorialJava.capitulo5_Arrays_y_Colecciones.ejercicios.bloque02;
 
+import javax.swing.JOptionPane;
+
 import tutorialJava.Utils;
 
-public class Ejercicio2 {
+public class Ejercicio3 {
 
 	/**
 	 * Método principal
@@ -11,37 +13,19 @@ public class Ejercicio2 {
 	 */
 	
 	public static void main(String[] args) {
+		
 		int array1[] = creaInicializaArrayNumerosEnterosAzarEntreLimites1(150, 0, 100);
 
 		muestraArray(array1);
+		
+		int multiplicar = Integer.parseInt(JOptionPane.showInputDialog("Multiplicar los números del array por: "));
+			
 		for (int i = 0; i < array1.length; i++) {
-//			if (array1[i] % 2 == 1) { // El valor es par
-//				array1[i] = -array1[i];
-//			}
-		}
-//		muestraArray(array1);
-		
-		int array2[] = creaInicializaArrayNumerosEnterosAzarEntreLimites2(150, 0, 100);
-
-		muestraArray(array2);
-		for (int i = 0; i < array2.length; i++) {
-//			if (array2[i] % 2 == 0) { // El valor es par
-//				array2[i] = -array2[i];
-//			}
-		}
-//		muestraArray(array2);
-		
-		int array3[] = creaInicializaArrayNumerosEnterosAzarEntreLimites3(150, 0, 100);
-
-//		muestraArray(array3);
-		for (int i = 0; i < array3.length; i++) {
-			if (i % 2 != 0) { // Si el valor del índice es impar
-				array3[i] = array1[i]; //Se copia el valor del número en el array1
-			} else if (i % 2 == 0) { //Si el valor del índice es par
-				array3[i] = array2[i]; //Se copia el valor en el array2
+			if (array1[i] >= 0) {
+				array1[i] = array1[i] * multiplicar;
 			}
 		}
-		muestraArray(array3);
+		muestraArray(array1);
 	}
 
 	/**
