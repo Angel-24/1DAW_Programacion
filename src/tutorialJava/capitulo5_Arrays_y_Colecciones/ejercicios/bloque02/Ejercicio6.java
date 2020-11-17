@@ -1,8 +1,10 @@
 package tutorialJava.capitulo5_Arrays_y_Colecciones.ejercicios.bloque02;
 
+import javax.swing.JOptionPane;
+
 import tutorialJava.Utils;
 
-public class Ejercicio4 {
+public class Ejercicio6 {
 
 	/**
 	 * Método principal
@@ -11,20 +13,39 @@ public class Ejercicio4 {
 	 */
 
 	public static void main(String[] args) {
+
+		int pos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuántas posiciones se van a despalazar?"));
+		int dir = JOptionPane.showOptionDialog(null, null, "¿Desplazar a la derecha?", 0, 1, null, null, null);
+		boolean derecha = false;
+		if (dir == 0) {
+			derecha = true;
+		} else if (dir == 1) {
+			derecha = false;
+		}
 		
 		int array[] = creaInicializaArrayNumerosEnterosAzarEntreLimites(5, 0, 100);
 
 		muestraArray(array);
 
-		int aux = array[array.length-1];
-		
-		for (int i = array.length-1; i > 0; i--) {
-			array[i] = array[i-1];
+		for (int j = 0; j < pos; j++) {
+			
+			if (derecha == true) {
+				int aux = array[array.length - 1];
+				for (int i = array.length - 1; i > 0; i--) {
+					array[i] = array[i - 1];
+				}
+				array[0] = aux;
+			}
+			
+			else if (derecha == false) {
+				int aux = array[array.length+pos-1];
+				for (int i = 0; i < 4; i++) {
+					array[i] = array[i + 1];
+				}
+				array[array.length-pos] = aux;
+			}
 		}
-		array[0] = aux;
-
 		muestraArray(array);
-
 	}
 
 	/**
