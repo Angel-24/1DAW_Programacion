@@ -38,11 +38,11 @@ public class Ejercicio6 {
 			}
 			
 			else if (derecha == false) {
-				int aux = array[array.length+pos-1];
+				int aux = array[array.length - array.length];
 				for (int i = 0; i < 4; i++) {
 					array[i] = array[i + 1];
 				}
-				array[array.length-pos] = aux;
+				array[array.length - 1] = aux;
 			}
 		}
 		muestraArray(array);

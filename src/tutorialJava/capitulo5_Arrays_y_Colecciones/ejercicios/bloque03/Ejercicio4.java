@@ -11,7 +11,7 @@ import tutorialJava.UtilsArrays;
  * "Burbuja", con el objetivo de ordenar el array completamente. Puedes consultar el siguiente
  * http://lwh.free.fr/pages/algo/tri/tri_bulle_es.html
  */
-public class Ejercicio01_OrdenacionBurbuja {
+public class Ejercicio4 {
 
 	/**
 	 * Método principal
@@ -26,7 +26,7 @@ public class Ejercicio01_OrdenacionBurbuja {
 		long millisAntesDeLaOrdenacion = new Date().getTime();
 		
 		
-		ordenaArrayPorBurbuja (vector);
+		selection(vector, 150);
 		
 		
 		// Mido el tiempo después
@@ -38,26 +38,23 @@ public class Ejercicio01_OrdenacionBurbuja {
 		// Mostramos el resultado
 		UtilsArrays.mostrarArray(vector);
 	}
-
 	
-	/**
-	 * Implementa el algoritmo de la buburja para ordenar un array
-	 * @param array Array desordenado que se ordenará
-	 */
-	public static void ordenaArrayPorBurbuja (int array[]) {
-		boolean hayIntercambios;
-		do {
-			hayIntercambios = false;
-			// Empieza el algoritmo
-			for (int i = 0; i < array.length - 1; i++) {
-				if (array[i+1] < array[i]) {
-					// Entonces hago un intercambio
-					int aux = array[i+1];
-					array[i+1] = array[i];
-					array[i] = aux;
-					hayIntercambios = true;
-				}
-			}
-		} while (hayIntercambios);
+	
+	
+	
+	public static void selection(int vector[], int taille)
+	{
+	     int actual, mas_pequeno, j, temp;
+	 
+	     for (actual = 0; actual < taille - 1; actual++)
+	     {
+	         mas_pequeno = actual;
+	         for (j = actual +1; j < taille; j++)
+	              if (vector[j] < vector[mas_pequeno])
+	                  mas_pequeno = j;
+	          temp = vector[actual];
+	          vector[actual] = vector[mas_pequeno];
+	          vector[mas_pequeno] = temp;
+	     }
 	}
 }

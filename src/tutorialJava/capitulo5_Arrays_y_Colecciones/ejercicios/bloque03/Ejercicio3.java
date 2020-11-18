@@ -11,7 +11,7 @@ import tutorialJava.UtilsArrays;
  * "Burbuja", con el objetivo de ordenar el array completamente. Puedes consultar el siguiente
  * http://lwh.free.fr/pages/algo/tri/tri_bulle_es.html
  */
-public class Ejercicio01_OrdenacionBurbuja {
+public class Ejercicio3 {
 
 	/**
 	 * Método principal
@@ -26,7 +26,7 @@ public class Ejercicio01_OrdenacionBurbuja {
 		long millisAntesDeLaOrdenacion = new Date().getTime();
 		
 		
-		ordenaArrayPorBurbuja (vector);
+		shell(vector);
 		
 		
 		// Mido el tiempo después
@@ -38,26 +38,24 @@ public class Ejercicio01_OrdenacionBurbuja {
 		// Mostramos el resultado
 		UtilsArrays.mostrarArray(vector);
 	}
-
 	
-	/**
-	 * Implementa el algoritmo de la buburja para ordenar un array
-	 * @param array Array desordenado que se ordenará
-	 */
-	public static void ordenaArrayPorBurbuja (int array[]) {
-		boolean hayIntercambios;
-		do {
-			hayIntercambios = false;
-			// Empieza el algoritmo
-			for (int i = 0; i < array.length - 1; i++) {
-				if (array[i+1] < array[i]) {
-					// Entonces hago un intercambio
-					int aux = array[i+1];
-					array[i+1] = array[i];
-					array[i] = aux;
-					hayIntercambios = true;
-				}
-			}
-		} while (hayIntercambios);
+	
+	static void tri_insertion(int t[], int gap, int debut) {
+	    int j,en_cours;
+	    for (int i = gap + debut; i < 150; i+=gap) {
+	        en_cours = t[i];
+	        for (j = i; j >= gap && t[j - gap] > en_cours; j-=gap) {
+	            t[j] = t[j - gap];
+	        }
+	        t[j] = en_cours;
+	    }
+	}
+	 
+	static void shell(int t[]) {
+	    int intervalles[]={6,4,3,2,1};
+	    for (int ngap=0;ngap<5;ngap++) {
+	        for (int i=0;i<intervalles[ngap];i++)
+	            tri_insertion(t,intervalles[ngap],i);
+	    }
 	}
 }
