@@ -14,20 +14,21 @@ public class Ejercicio2 {
 		int num1;
 		int num2;
 		int num3;
-		float num4;
 		
-		String str = JOptionPane.showInputDialog("Introduce un número: ");
+		String str = JOptionPane.showInputDialog("Introduce el mínimo ");
 		num1 = Integer.parseInt(str);
-		str = JOptionPane.showInputDialog("Introduce otro número: ");
+		str = JOptionPane.showInputDialog("Introduce el máximo: ");
 		num2 = Integer.parseInt(str);
-		str = JOptionPane.showInputDialog("Introduce un número más: ");
+		str = JOptionPane.showInputDialog("Introduce un número: ");
 		num3 = Integer.parseInt(str);
-		str = JOptionPane.showInputDialog("Introduce un número flotante: ");
-		num4 = Integer.parseInt(str);
 
-		float resultado = obtenerNumeroDeUsuarioEntreMinimoYMaximo(num1, num2, num3, num4);
+		int resultado = obtenerNumeroDeUsuarioEntreMinimoYMaximo(num1, num2, num3);
 		
-		System.out.println(resultado);
+		if (num3 >= num1 && num3 <= num2) {
+			System.out.println(resultado);
+		} else {
+			System.out.println("Error");
+		}
 
 	}
 
@@ -37,14 +38,17 @@ public class Ejercicio2 {
 	 * 
 	 * @param array Array desordenado que se ordenará
 	 */
-	public static float obtenerNumeroDeUsuarioEntreMinimoYMaximo (int num1, int num2, int num3, float num4) {
+	public static int obtenerNumeroDeUsuarioEntreMinimoYMaximo (int num1, int num2, int num3) {
 
-//		String varstr = JOptionPane.showInputDialog("Variable");
-//		int var = Integer.parseInt(varstr);
-
-		float vector = num1 + num2 + num3 + num4; 
-		float media = vector/4;
-		
-		return media;
+		boolean enLimites = false;
+		for (int i = 0; enLimites == false;) {
+			
+			
+			if (num3 >= num1 && num3 <= num2) {
+				enLimites = true;
+			
+			}
+		}
+		return obtenerNumeroDeUsuarioEntreMinimoYMaximo(num1, num2, num3);
 	}
 }
