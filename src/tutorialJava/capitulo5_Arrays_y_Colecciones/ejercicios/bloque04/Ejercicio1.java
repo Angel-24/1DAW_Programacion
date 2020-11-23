@@ -8,45 +8,43 @@ import tutorialJava.UtilsArrays;
 
 public class Ejercicio1 {
 
+
 	public static void main(String[] args) {
-		int vector[] = UtilsArrays.creaArrayNumerosAzar(150, 0, 1000);
 
-		UtilsArrays.mostrarArray(vector);
+		int num1;
+		int num2;
+		int num3;
+		float num4;
+		
+		String str = JOptionPane.showInputDialog("Introduce un número: ");
+		num1 = Integer.parseInt(str);
+		str = JOptionPane.showInputDialog("Introduce otro número: ");
+		num2 = Integer.parseInt(str);
+		str = JOptionPane.showInputDialog("Introduce un número más: ");
+		num3 = Integer.parseInt(str);
+		str = JOptionPane.showInputDialog("Introduce un número flotante: ");
+		num4 = Integer.parseInt(str);
 
-		// Mido el tiempo de inicio
-		long millisAntesDeLaOrdenacion = new Date().getTime();
+		float resultado = media(num1, num2, num3, num4);
+		
+		System.out.println(resultado);
 
-		ordenaArrayPorBurbuja(vector);
-
-		// Mido el tiempo después
-		long millisDespuesDeLaOrdenacion = new Date().getTime();
-
-		// Muestro el tiempo en millis
-		System.out.println("\nEjecución en " + (millisDespuesDeLaOrdenacion - millisAntesDeLaOrdenacion) + " millis\n");
-
-		// Mostramos el resultado
-		UtilsArrays.mostrarArray(vector);
 	}
+
 
 	/**
 	 * Implementa el algoritmo de la buburja para ordenar un array
 	 * 
 	 * @param array Array desordenado que se ordenará
 	 */
-	public static void ordenaArrayPorBurbuja(int array[]) {
-		boolean hayIntercambios;
-		do {
-			hayIntercambios = false;
-			// Empieza el algoritmo
-			for (int i = 0; i < array.length - 1; i++) {
-				if (array[i + 1] < array[i]) {
-					// Entonces hago un intercambio
-					int aux = array[i + 1];
-					array[i + 1] = array[i];
-					array[i] = aux;
-					hayIntercambios = true;
-				}
-			}
-		} while (hayIntercambios);
+	public static float media (int num1, int num2, int num3, float num4) {
+
+//		String varstr = JOptionPane.showInputDialog("Variable");
+//		int var = Integer.parseInt(varstr);
+
+		float vector = num1 + num2 + num3 + num4; 
+		float media = vector/4;
+		
+		return media;
 	}
 }
