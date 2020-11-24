@@ -41,7 +41,7 @@ public class Ejercicio2 {
 	public static int obtenerNumeroDeUsuarioEntreMinimoYMaximo (int num1, int num2, int num3) {
 
 		boolean enLimites = false;
-		for (int i = 0; enLimites == false;) {
+		for (;enLimites == false;) {
 			
 			
 			if (num3 >= num1 && num3 <= num2) {

@@ -1,4 +1,4 @@
-package tutorialJava;
+package tutorialJava.capitulo5_Arrays_y_Colecciones.ejercicios.bloque7;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
