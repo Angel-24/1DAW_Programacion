@@ -49,14 +49,6 @@ public class Ejercicio01 {
 			// Cada caso en función de la opción elegida por el usuario
 			
 			switch (opcion) {
-			case 0: // Ha elegido abandonar la aplicación			
-				salir = JOptionPane.showConfirmDialog(null, "¿Quieres salir?", "", 0);
-				if (salir == 0) {
-				JOptionPane.showMessageDialog(null, "Adiós!");
-				} else if (salir != 0) {
-				opcion = 10;
-				}
-				break;
 			case 1:
 				añadir = añadirLinea(fichero);
 				fichero.add(añadir);
@@ -64,7 +56,11 @@ public class Ejercicio01 {
 			case 2:
 				numeroLinea = pedirLinea(fichero);
 				añadir = añadirLinea(fichero);
-				fichero.replaceAll(fichero, "a", fichero);
+				if (numeroLinea != 0) {
+					fichero.set(numeroLinea-1, añadir);
+				} else if (numeroLinea == 0) {
+					fichero.set(numeroLinea, añadir);
+				}
 				break;
 			case 3:
 				break;
@@ -74,11 +70,19 @@ public class Ejercicio01 {
 				break;
 			case 6:
 				break;
-			case 7: // Ha elegido visualizar el fichero
-				visualizaLista(fichero);
+			case 7:
 				break;
-			default:
-				System.out.println("");
+			case 0: // Ha elegido abandonar la aplicación			
+			salir = JOptionPane.showConfirmDialog(null, "¿Quieres salir?", "", 0);
+			if (salir == 0) {
+			JOptionPane.showMessageDialog(null, "Adiós!");
+			} else if (salir != 0) {
+			opcion = 10;
+			}
+			break;
+		
+			default: // Ha elegido visualizar el fichero
+				visualizaLista(fichero);
 			}
 			
 			
@@ -91,24 +95,27 @@ public class Ejercicio01 {
 	 * @return
 	 */
 	public static int menu () {
-		String strMenu = "\n ____________________| MENÚ |_________________________\n|"
-				+ "\n|   0.- Salir"
+//		int opcionUsuario = 0;
+		String strMenu = "\n ____________________| MENÚ |_________________________     .\n|"
 				+ "\n|   1.- Agregar una línea"
 				+ "\n|   2.- Insertar una línea en una posición"
 				+ "\n|   3.- Editar una línea"
 				+ "\n|   4.- Eliminar una línea"
 				+ "\n|   5.- Cortar un conjunto de líneas"
 				+ "\n|   6.- Pegar un conjunto de líneas"
-				+ "\n|   7.- Visualizar el fichero"
-				+ "\n|_____________________________________________________"
+				+ "\n|   9.- Visualizar fichero"
+				+ "\n|   0.- Cerrar Aplicación"
+				+ "\n|_____________________________________________________     ."
 				+ "\n ";
 		// Muestro el menú
 //		System.out.println(strMenu);
 		// Pido una opción al usuario
-		int opcionUsuario = Integer.parseInt(JOptionPane.showInputDialog(strMenu));
+		String opcionUsuario = JOptionPane.showInputDialog(strMenu);
+		opcionUsuario = Integer.parseInt(opcionUsuario);
 		// Devuelvo la opción seleccionada
 		return opcionUsuario;
 	}
+
 	
 	/**
 	 * Recorre la lista que simboliza el fichero, exponiendo las líneas en pantalla y cada una con su número de línea
@@ -116,8 +123,8 @@ public class Ejercicio01 {
 	 */
 	public static void visualizaLista (List<String> lista) {
 		System.out.println("\n\nContenido del fichero");
-		for (int i = 0; i < lista.size(); i++) {
-			System.out.println("\t" + i + " - " + lista.get(i));
+		for (int i = 1; i < lista.size() +1; i++) {
+			System.out.println("\t" + i + " - " + lista.get(i -1));
 		}
 	}
 	
@@ -133,10 +140,10 @@ public class Ejercicio01 {
 	public static int pedirLinea (List<String> lista) {
 //		System.out.println("\n\nContenido del fichero");
 		int numeroLinea = Integer.parseInt(JOptionPane.showInputDialog("Modificar Línea en la posición:"));
-		for (int i = 0; i < lista.size(); i++) {
+/*		for (int i = 0; i < lista.size(); i++) {
 			System.out.println("\t" + i + " - " + lista.get(i));
 		}
-		return numeroLinea;
+*/		return numeroLinea;
 	}
 
 
