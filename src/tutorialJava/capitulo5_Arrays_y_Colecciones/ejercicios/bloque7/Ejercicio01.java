@@ -34,9 +34,11 @@ public class Ejercicio01 {
 		// Declaro variables necesarias
 		int  salir = 1;
 		String añadir = null;
+		String eliminar = null;
 		int numeroLinea = 0;
 		int opcion;
 		List<String> fichero = new ArrayList<String>();
+		List<String> copia = new ArrayList<String>();
 		
 		// Inicializo algo de contenido en la lista. Esto debe eliminarse cuando el programa esté finalizado
 		fichero.add("Primera línea"); fichero.add("Segunda línea"); fichero.add("Tercera línea");
@@ -57,14 +59,28 @@ public class Ejercicio01 {
 				numeroLinea = pedirLinea(fichero);
 				añadir = añadirLinea(fichero);
 				if (numeroLinea != 0) {
+					fichero.add(numeroLinea-1, añadir);
+				} else if (numeroLinea == 0) {
+					fichero.add(numeroLinea, añadir);
+				}
+				break;
+			case 3:
+				numeroLinea = pedirLinea(fichero);
+				añadir = añadirLinea(fichero);
+				if (numeroLinea != 0) {
 					fichero.set(numeroLinea-1, añadir);
 				} else if (numeroLinea == 0) {
 					fichero.set(numeroLinea, añadir);
 				}
 				break;
-			case 3:
-				break;
 			case 4:
+				numeroLinea = pedirLinea(fichero);
+//				eliminar = eliminarLinea(fichero);
+				if (numeroLinea != 0) {
+					fichero.remove(numeroLinea-1);
+				} else if (numeroLinea == 0) {
+					fichero.remove(numeroLinea);
+				}
 				break;
 			case 5: 
 				break;
@@ -110,8 +126,8 @@ public class Ejercicio01 {
 		// Muestro el menú
 //		System.out.println(strMenu);
 		// Pido una opción al usuario
-		String opcionUsuario = JOptionPane.showInputDialog(strMenu);
-		opcionUsuario = Integer.parseInt(opcionUsuario);
+		int opcionUsuario = Integer.parseInt(JOptionPane.showInputDialog(strMenu));
+//		opcionUsuario = Integer.parseInt(opcionUsuario);
 		// Devuelvo la opción seleccionada
 		return opcionUsuario;
 	}
@@ -137,6 +153,12 @@ public class Ejercicio01 {
 		return linea;
 	}
 
+/*	public static String eliminarLinea (List<String> lista) {
+		String linea = JOptionPane.showInputDialog("Añadir línea de texto:");
+		
+		return linea;
+	}
+*/	
 	public static int pedirLinea (List<String> lista) {
 //		System.out.println("\n\nContenido del fichero");
 		int numeroLinea = Integer.parseInt(JOptionPane.showInputDialog("Modificar Línea en la posición:"));
