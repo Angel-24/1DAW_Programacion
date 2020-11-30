@@ -1,5 +1,7 @@
 package tutorialJava.capitulo04.bloque01_PrimerosObjetos;
 
+import tutorialJava.Utils;
+
 public class CromoBaloncesto {
 
 	public static void main(String[] args) {
@@ -10,9 +12,26 @@ public class CromoBaloncesto {
 		int pesoKg;
 		float puntosMediosPorPartido;
 
+		
 	}
 
-	public static void ordenaJugadores(Lista<CromoBaloncesto> lista) {
+	public CromoBaloncesto1() {
+		return;
+	}
 	
-	}	
+	public CromoBaloncesto() {
+		String nombreJugador;
+		int alturaCm;
+		int pesoKg;
+		float puntosMediosPorPartido;
+
+		System.out.println("A");
+		return;
+	}
+
+	public String toString() {
+		return "CromoBaloncesto [nombre=" + nombreJugador + ", altura=" + alturaCm + ", peso=" + pesoKg
+				+ ",Puntos medios por Partido=" + puntosMediosPorPartido;
+	}
+
 }
