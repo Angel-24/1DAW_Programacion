@@ -8,7 +8,7 @@ public class Ejercicio03 {
 		int menu1 = 1;
 		String menu = "1";
 		int reiniciar = 0;
-		
+
 		while (menu1 != 0 && reiniciar == 0) {
 			double num1 = 0;
 			double num2 = 0;

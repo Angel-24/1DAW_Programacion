@@ -17,7 +17,8 @@ public class Ejercicio02 {
 				System.out.println("La media de los números introducidos es: " + media);
 				System.out.println("Se han introducido: " + i + " números.");
 				break;
-			} else;
+			} else
+				;
 		}
 	}
 }

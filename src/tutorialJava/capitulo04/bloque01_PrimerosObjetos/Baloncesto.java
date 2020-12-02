@@ -8,9 +8,9 @@ public class Baloncesto {
 		// TODO Auto-generated method stub
 
 		creaArrayNumerosUsuario(CromoBaloncesto);
-		
+
 	}
-	
+
 	public static int[] creaArrayNumerosUsuario(int longitud) {
 		int array[] = new int[longitud];
 		for (int i = 0; i < array.length; i++) {
@@ -18,5 +18,5 @@ public class Baloncesto {
 		}
 		return array;
 	}
-	
+
 }

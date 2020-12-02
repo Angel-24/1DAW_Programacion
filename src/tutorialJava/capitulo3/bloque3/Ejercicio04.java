@@ -12,11 +12,10 @@ public class Ejercicio04 {
 //		String limite = JOptionPane.showInputDialog("¿Cuántos números se van a introducir?: ");
 		for (int i = 0; i >= 0; i++) {
 			if (var == 0 & i >= 1) {
-				System.out.println(
-						"El menor número introducido es: " + menor + ".");
+				System.out.println("El menor número introducido es: " + menor + ".");
 				break;
-			}
-			else { if (var != 0 | i == 0) {
+			} else {
+				if (var != 0 | i == 0) {
 					String str = JOptionPane.showInputDialog("Introduzca un número: ");
 					var = Integer.parseInt(str);
 					if (var < menor && var != 0) {

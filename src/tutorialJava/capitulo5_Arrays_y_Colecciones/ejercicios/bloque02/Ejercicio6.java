@@ -22,13 +22,13 @@ public class Ejercicio6 {
 		} else if (dir == 1) {
 			derecha = false;
 		}
-		
+
 		int array[] = creaInicializaArrayNumerosEnterosAzarEntreLimites(5, 0, 100);
 
 		muestraArray(array);
 
 		for (int j = 0; j < pos; j++) {
-			
+
 			if (derecha == true) {
 				int aux = array[array.length - 1];
 				for (int i = array.length - 1; i > 0; i--) {
@@ -36,7 +36,7 @@ public class Ejercicio6 {
 				}
 				array[0] = aux;
 			}
-			
+
 			else if (derecha == false) {
 				int aux = array[array.length - array.length];
 				for (int i = 0; i < 4; i++) {

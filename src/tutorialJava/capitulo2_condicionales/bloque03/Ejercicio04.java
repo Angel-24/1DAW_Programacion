@@ -44,7 +44,7 @@ public class Ejercicio04 {
 				if (importe == cantidad) {
 					System.out.println("Ya has pagado la cantidad exacta, melón. Nadie debe devolver nada. \n");
 				} else if (importe > cantidad) {
-					vuelta = vuelta - (2*vuelta);
+					vuelta = vuelta - (2 * vuelta);
 					System.out.println("Aún debes pagar " + vuelta + " unidades... \n");
 				}
 			}

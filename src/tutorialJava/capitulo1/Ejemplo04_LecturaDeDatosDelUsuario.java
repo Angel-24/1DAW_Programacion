@@ -16,22 +16,13 @@ public class Ejemplo04_LecturaDeDatosDelUsuario {
 	 * Método lecturaCadenaDeCaracteres
 	 */
 	public static void lecturaCadenaDeCaracteres() {
-		String str; // Creo una variable String, para almacenar la palabra introducida por el usuario
-		str = JOptionPane.showInputDialog("Introduzca una palabra o frase, ya!"); // Saca en pantalla una ventana y obtiene un string
+		String str; // Creo una variable String, para almacenar la palabra introducida por el
+					// usuario
+		str = JOptionPane.showInputDialog("Introduzca una palabra o frase, ya!"); // Saca en pantalla una ventana y
+																					// obtiene un string
 		System.out.println("Palabra o frase introducida: " + str); // Imprime en la consola la palabra introducida
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * Método lecturaDatosEnteros
 	 */
@@ -53,18 +44,20 @@ public class Ejemplo04_LecturaDeDatosDelUsuario {
 	 * Método lecturaDatosEnterosConError
 	 */
 	public static void lecturaDatosEnterosConError() {
-		// En este caso hacemos lo mismo que el método anterior, pero teniendo en cuenta que algo puede fallar.
+		// En este caso hacemos lo mismo que el método anterior, pero teniendo en cuenta
+		// que algo puede fallar.
 		String str = JOptionPane.showInputDialog("Introduzca un número entero: ");
 		try { // Intento realizar la siguiente acción
 			int var1 = Integer.parseInt(str); // Convertir el String en un número entero
-			System.out.println("Número introducido: " + var1); 
+			System.out.println("Número introducido: " + var1);
 		} catch (Exception ex) { // En caso de que ocurra algún error.
 			System.out.println("Error, no has introducido un número entero");
 		}
 	}
 
 	/**
-	 * Método lecturaDatossFlotantes. Hace lo mismo de los otros métodos pero con números flotantes
+	 * Método lecturaDatossFlotantes. Hace lo mismo de los otros métodos pero con
+	 * números flotantes
 	 */
 	public static void lecturaDatosFlotantes() {
 		String str = JOptionPane.showInputDialog("Introduzca un número flotante: ");

@@ -20,6 +20,5 @@ public class Persona {
 	public String toString() {
 		return "Persona [nombre=" + nombre + "]";
 	}
-	
-	
+
 }

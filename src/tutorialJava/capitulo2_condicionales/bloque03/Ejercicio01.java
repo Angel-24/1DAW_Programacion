@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Ejercicio01 {
 
 	public static void main(String[] args) {
-		
+
 		String str1 = JOptionPane.showInputDialog("Introduzca un número: ");
 		int puntos = Integer.parseInt(str1);
 

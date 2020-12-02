@@ -14,9 +14,9 @@ public class Ejercicio07 {
 			var = Integer.parseInt(str);
 			if (var > 0) {
 				pos++;
-			}
-			else { if (var < 0)
-				neg++;
+			} else {
+				if (var < 0)
+					neg++;
 			}
 		}
 		System.out.println("Se escribieron: " + pos + " números positivos, y " + neg + " números negativos.");

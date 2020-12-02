@@ -15,9 +15,8 @@ public class Ejercicio01 {
 //		int suma = var2 & 1;
 		if (var1 > var2) {
 			System.out.println(var1 + " es mayor que " + var2);
-		}
-		else {
-				System.out.println(var2 + " es mayor que " + var1);
+		} else {
+			System.out.println(var2 + " es mayor que " + var1);
 		}
 	}
 }

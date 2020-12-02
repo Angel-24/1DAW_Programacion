@@ -12,13 +12,12 @@ public class CromoBaloncesto {
 		int pesoKg;
 		float puntosMediosPorPartido;
 
-		
 	}
 
 	public CromoBaloncesto1() {
 		return;
 	}
-	
+
 	public CromoBaloncesto() {
 		String nombreJugador;
 		int alturaCm;

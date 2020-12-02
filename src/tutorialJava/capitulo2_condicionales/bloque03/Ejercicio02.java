@@ -5,27 +5,19 @@ import javax.swing.JOptionPane;
 public class Ejercicio02 {
 
 	public static void main(String[] args) {
-		
+
 		String str;
 		double num1;
 		double num2;
 		double resultado;
-		
-		String menu = JOptionPane.showInputDialog("¿Qué tipo de operación va a realizar?"
-				+ "\n(Raíz, Potencia, División)");
-/*		eleccion = (menu);
-		if (menu == "Raíz") {
-			eleccion = 1;
-		} else {
-			if (menu == "Potencia") {
-				eleccion = 2;
-			} else {
-				if (menu == "División") {
-					eleccion = 3;
-				}
-			}
-		}
-*/
+
+		String menu = JOptionPane
+				.showInputDialog("¿Qué tipo de operación va a realizar?" + "\n(Raíz, Potencia, División)");
+		/*
+		 * eleccion = (menu); if (menu == "Raíz") { eleccion = 1; } else { if (menu ==
+		 * "Potencia") { eleccion = 2; } else { if (menu == "División") { eleccion = 3;
+		 * } } }
+		 */
 		switch (menu) {
 		case "Raíz":
 			str = JOptionPane.showInputDialog("Realizar la raíz de: ");

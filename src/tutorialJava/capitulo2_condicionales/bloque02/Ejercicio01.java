@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Ejercicio01 {
 
 	public static void main(String[] args) {
-		
+
 		String str1 = JOptionPane.showInputDialog("Introduzca un número: ");
 		int var1 = Integer.parseInt(str1);
 		String str2 = JOptionPane.showInputDialog("Introduzca otro número: ");
@@ -38,8 +38,7 @@ public class Ejercicio01 {
 		int bajo5 = 0;
 		int medio5 = 0;
 		int grande5 = 0;
-		
-		
+
 		if (var1 <= -1) {
 			negativo1 = var1;
 		} else {
@@ -119,9 +118,13 @@ public class Ejercicio01 {
 		int suma_b = bajo1 + bajo2 + bajo3 + bajo4 + bajo5;
 		int suma_m = medio1 + medio2 + medio3 + medio4 + medio5;
 		int suma_g = grande1 + grande2 + grande3 + grande4 + grande5;
-		System.out.println("Las sumas de los números negativos son: " + negativo1 + " + " + negativo2 + " + " + negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_n);
-		System.out.println("Las sumas de los números entre 0 y 25 son: " + bajo1 + " + " + bajo2 + " + " + bajo3 + " + " + bajo4 + " + " + bajo5 + " = " + suma_b);
-		System.out.println("Las sumas de los números entre 26 y 250 son: " + negativo1 + " + " + negativo2 + " + " + negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_m);
-		System.out.println("Las sumas de los números mayores de 250 son: " + negativo1 + " + " + negativo2 + " + " + negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_g);
+		System.out.println("Las sumas de los números negativos son: " + negativo1 + " + " + negativo2 + " + "
+				+ negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_n);
+		System.out.println("Las sumas de los números entre 0 y 25 son: " + bajo1 + " + " + bajo2 + " + " + bajo3 + " + "
+				+ bajo4 + " + " + bajo5 + " = " + suma_b);
+		System.out.println("Las sumas de los números entre 26 y 250 son: " + negativo1 + " + " + negativo2 + " + "
+				+ negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_m);
+		System.out.println("Las sumas de los números mayores de 250 son: " + negativo1 + " + " + negativo2 + " + "
+				+ negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_g);
 	}
 }

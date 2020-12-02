@@ -37,7 +37,7 @@ public class Ejercicio05 {
 				}
 			}
 		}
-		
+
 		if (var1 < var2 && var1 < var2 && var1 < var4 && var1 < var5) {
 			System.out.println(var1 + " es el menor.");
 		} else {

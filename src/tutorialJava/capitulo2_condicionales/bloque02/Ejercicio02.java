@@ -29,7 +29,7 @@ public class Ejercicio02 {
 		int bajoC = 0;
 		int medioC = 0;
 		int grandeC = 0;
-		
+
 		String str1 = JOptionPane.showInputDialog("Introduzca un número: ");
 		int var1 = Integer.parseInt(str1);
 
@@ -123,21 +123,23 @@ public class Ejercicio02 {
 										grandeC = grandeC + 1;
 									}
 								}
-							}			
-							System.out.println("Números introducidos: " + var1 + ", " + var2 + ", " + var3 + ", " + var4 + " y " + var5);
+							}
+							System.out.println("Números introducidos: " + var1 + ", " + var2 + ", " + var3 + ", " + var4
+									+ " y " + var5);
 //							int suma_n = negativo1 + negativo2 + negativo3 + negativo4 + negativo5;
 							int suma_b = bajo1 + bajo2 + bajo3 + bajo4 + bajo5;
 							int suma_m = medio1 + medio2 + medio3 + medio4 + medio5;
 							int suma_g = grande1 + grande2 + grande3 + grande4 + grande5;
 //							System.out.println("Las sumas de los números negativos son: " + negativo1 + " + " + negativo2 + " + " + negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_n);
-							System.out.println("Las sumas de los números entre 0 y 25 son: " + bajo1 + " + " + bajo2 + " + " + bajo3 + " + "
-									+ bajo4 + " + " + bajo5 + " = " + suma_b);
-							System.out.println("Las sumas de los números entre 26 y 250 son: " + negativo1 + " + " + negativo2 + " + "
-									+ negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_m);
-							System.out.println("Las sumas de los números mayores de 250 son: " + negativo1 + " + " + negativo2 + " + "
-									+ negativo3 + " + " + negativo4 + " + " + negativo5 + " = " + suma_g);
-						}
-						else {
+							System.out.println("Las sumas de los números entre 0 y 25 son: " + bajo1 + " + " + bajo2
+									+ " + " + bajo3 + " + " + bajo4 + " + " + bajo5 + " = " + suma_b);
+							System.out.println("Las sumas de los números entre 26 y 250 son: " + negativo1 + " + "
+									+ negativo2 + " + " + negativo3 + " + " + negativo4 + " + " + negativo5 + " = "
+									+ suma_m);
+							System.out.println("Las sumas de los números mayores de 250 son: " + negativo1 + " + "
+									+ negativo2 + " + " + negativo3 + " + " + negativo4 + " + " + negativo5 + " = "
+									+ suma_g);
+						} else {
 							System.out.println("Se ha cancelado el programa al introducir un número negativo");
 							System.out.println("No se han introducido números positivos...");
 						}

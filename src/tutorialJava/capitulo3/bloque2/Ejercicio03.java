@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Ejercicio03 {
 
 	public static void main(String[] args) {
-		
+
 //		int var;
 //		int suma = 0;
 		String num = JOptionPane.showInputDialog("Obtener múltiplos de: ");

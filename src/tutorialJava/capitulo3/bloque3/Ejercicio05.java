@@ -15,8 +15,8 @@ public class Ejercicio05 {
 				System.out.println(
 						"El mayor número introducido es: " + mayor + ", mientras que el menor es: " + menor + ".");
 				break;
-			}
-			else { if (var != 0 | i == 0) {
+			} else {
+				if (var != 0 | i == 0) {
 					String str = JOptionPane.showInputDialog("Introduzca un número: ");
 					var = Integer.parseInt(str);
 					if (var < menor && var != 0) {

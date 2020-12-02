@@ -9,7 +9,7 @@ public class Ejercicio2 {
 	 * 
 	 * @param args
 	 */
-	
+
 	public static void main(String[] args) {
 		int array1[] = creaInicializaArrayNumerosEnterosAzarEntreLimites1(150, 0, 100);
 
@@ -20,7 +20,7 @@ public class Ejercicio2 {
 //			}
 		}
 //		muestraArray(array1);
-		
+
 		int array2[] = creaInicializaArrayNumerosEnterosAzarEntreLimites2(150, 0, 100);
 
 		muestraArray(array2);
@@ -30,15 +30,15 @@ public class Ejercicio2 {
 //			}
 		}
 //		muestraArray(array2);
-		
+
 		int array3[] = creaInicializaArrayNumerosEnterosAzarEntreLimites3(150, 0, 100);
 
 //		muestraArray(array3);
 		for (int i = 0; i < array3.length; i++) {
 			if (i % 2 != 0) { // Si el valor del índice es impar
-				array3[i] = array1[i]; //Se copia el valor del número en el array1
-			} else if (i % 2 == 0) { //Si el valor del índice es par
-				array3[i] = array2[i]; //Se copia el valor en el array2
+				array3[i] = array1[i]; // Se copia el valor del número en el array1
+			} else if (i % 2 == 0) { // Si el valor del índice es par
+				array3[i] = array2[i]; // Se copia el valor en el array2
 			}
 		}
 		muestraArray(array3);
@@ -52,7 +52,7 @@ public class Ejercicio2 {
 	 * @param limiteSup Máximo número que puede aparecer en el interior del array
 	 * @return Array inicializado.
 	 */
-	
+
 	public static int[] creaInicializaArrayNumerosEnterosAzarEntreLimites1(int longitud, int limiteInf, int limiteSup) {
 		int array[] = new int[longitud]; // Declaración del array
 
@@ -71,9 +71,9 @@ public class Ejercicio2 {
 		}
 
 		return array; // Devuelvo el array creado e inicializado.
-		
+
 	}
-	
+
 	public static int[] creaInicializaArrayNumerosEnterosAzarEntreLimites3(int longitud, int limiteInf, int limiteSup) {
 		int array[] = new int[longitud]; // Declaración del array
 
@@ -83,12 +83,13 @@ public class Ejercicio2 {
 
 		return array; // Devuelvo el array creado e inicializado.
 	}
+
 	/**
 	 * Método que muestra un array en la consola
 	 * 
 	 * @param array Recibe un array que va a mostrar en pantalla
 	 */
-	
+
 	public static void muestraArray(int array[]) {
 		// Recorre el array con un bucle que recibe el nombre de for-each.
 		for (int numeroEnArray : array) {

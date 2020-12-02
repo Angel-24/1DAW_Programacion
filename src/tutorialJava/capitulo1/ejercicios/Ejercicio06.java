@@ -10,7 +10,7 @@ public class Ejercicio06 {
 		float capital;
 		float plazos;
 //		int ;
-		
+
 		String str = JOptionPane.showInputDialog("Euribor: ");
 		euribor = Float.parseFloat(str);
 		str = JOptionPane.showInputDialog("Diferencial: ");
@@ -19,10 +19,10 @@ public class Ejercicio06 {
 		capital = Float.parseFloat(str);
 		str = JOptionPane.showInputDialog("Plazos: ");
 		plazos = Float.parseFloat(str);
-		
+
 		float interesAnual = capital * (euribor + diferencial);
 		float interesMensual = (interesAnual / plazos) / (plazos - 1);
-		
+
 		System.out.println("El interés mensual es: " + interesMensual);
 	}
 }
