@@ -41,8 +41,8 @@ public class bolos {
 
 			mostrarArray(array, intento, puntuacion, tutorial, modo, jugadores, puntuacionJ1);
 
-			for (int i = 0; lanzar == 0 && i < 2; i++) {
-
+			for (int i = 0; lanzar == 0 && i < 3; i++) {
+				
 				if (i == 0) {
 					intento = " Último intento:";
 					lanzar = JOptionPane.showConfirmDialog(null, "                [  Primera Bola  ]", "¡Lanzar!", -1,
@@ -59,6 +59,12 @@ public class bolos {
 				if (jugadores == 1 && modo == 1 && i == 1) {
 					tutorial = "              (<Esc> = Salir del programa)\n              (<Espacio> = Lanzar la bola)\n\n"
 							+ "\n\n\n\n\n\n\n\n\n\n\n";
+				}
+				
+				if (i == 3) {
+					intento = " Último intento:";
+					lanzar = JOptionPane.showConfirmDialog(null, "                [  Primera Bola  ]", "¡Lanzar!", -1,
+							-1);
 				}
 				
 //			animarArray(array, intento, puntuacion);
@@ -79,9 +85,9 @@ public class bolos {
 				if (lanzar == -1) {
 					break;
 				}
-				if (i == 1 && modo == 0) {
+				if (i == 1 && modo == 0 && jugadores == 1) {
 					intento = " Puntuación:";
-					lanzar = JOptionPane.showConfirmDialog(null, "          [  El jugador 1 ha terminado su turno  ]        ", "Continuar", -1,
+					lanzar = JOptionPane.showConfirmDialog(null, "          [  El jugador 1 ha terminado su turno  ]        \n                   [  ¡Ve a avisar al jugador 2!  ]        ", "Continuar", -1,
 							-1);
 				}
 				mostrarArray(array, intento, puntuacion, tutorial, modo, jugadores, puntuacionJ1);
@@ -185,7 +191,7 @@ public class bolos {
 	}
 
 //##########################################################################################################	
-
+/*
 	public static void animarArray(int[] array, String intento, int puntuacion) {
 
 		for (int i = 0; i <= 10000; i++) {
@@ -335,4 +341,5 @@ public class bolos {
 			}
 		}
 	}
+	*/
 }
