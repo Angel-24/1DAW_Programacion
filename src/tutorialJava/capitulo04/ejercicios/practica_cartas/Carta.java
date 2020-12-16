@@ -1,10 +1,10 @@
 package tutorialJava.capitulo04.ejercicios.practica_cartas;
 
 public class Carta {
-
-		int valor;
+		String valor2;
+		String valor;
 		String palo;
-		int id;
+		String id;
 
 	public Carta() {
 		// TODO Auto-generated constructor stub
@@ -12,21 +12,54 @@ public class Carta {
 
 	public Carta(int valor, String palo, int id) {
 		super();
-		this.valor = valor;
+
+		this.valor = Integer.toString(valor);
+		this.valor2 = Integer.toString(valor);
 		this.palo = palo;
-		this.id = id;
+		this.id = Integer.toString(id);
+		
+		if (this.valor.length() < 2) {
+			this.valor = (valor + " ");
+		}
+		
+		if (this.valor2.length() < 2) {
+			this.valor2 = ("_" + valor);
+		}
+		
+		if (this.id.length() < 2) {
+			this.id = (" " + id);
+		}
 	}
 
 	@Override
 	public String toString() {
-		return "Carta [valor=" + valor + ", palo=" + palo + ", id=" + id + "]";
+//		el código que funciona:
+//		return "Carta [valor=" + valor + ", palo=" + palo + ", id=" + id + "]";
+		return "  _______ \n"
+			 + " |"  + valor + "     |⸜\n"
+			 + " |"  + palo + "      |·⸌⸜\n"
+			 + " |   "  +  "    |"+id+ "/\n"
+			 + " |   "    +     "    |·/\n"
+			 + " |      "  + palo + "|/\n"
+			 + " |_____" + valor2 + "!\n"
+			 + "              ⸌⸜·/   \n"
+			 ;
+		
+/*	
+ * 		el código que funciona:
+ * 	
+		return "  _________  \n"
+		 	 + " |         | \n"
+		   	 + " |         |"
+		   	 ;
+*/	
 	}
 
-	public int getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public void setValor(int valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 
@@ -38,11 +71,11 @@ public class Carta {
 		this.palo = palo;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
