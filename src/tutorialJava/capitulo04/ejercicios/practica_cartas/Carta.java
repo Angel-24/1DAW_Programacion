@@ -102,7 +102,5 @@ public class Carta {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-
 	
 }

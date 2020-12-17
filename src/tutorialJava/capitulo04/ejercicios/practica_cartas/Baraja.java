@@ -8,10 +8,13 @@ public class Baraja {
 		
 		Carta Baraja[] = new Carta[52];
 		iniBaraja(Baraja);
+		mover(Baraja);
 		
 		for (int i = 0; i < Baraja.length; i++) {
 			System.out.println(Baraja[i]);
 		}
+		
+		
 		
 	}
 	
@@ -34,7 +37,6 @@ public class Baraja {
 			valor++;
 			id++;
 		}
-		
 /*
 		for (int i = 1; i <= 52; i++) {
 			if (i <= 13) {
@@ -52,6 +54,12 @@ public class Baraja {
 			id++;
 		}
  */
+		
+	}
+	
+	public static void mover(Carta[] baraja) {
+		
+		
 		
 	}
 }
