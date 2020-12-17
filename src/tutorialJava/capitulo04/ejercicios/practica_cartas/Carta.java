@@ -26,8 +26,32 @@ public class Carta {
 			this.valor2 = ("_" + valor);
 		}
 		
+		if (this.valor.matches("11")) {
+			this.valor = ("J" + " ");
+		}
+		
+		if (this.valor2.matches("11")) {
+			this.valor2 = ("_" + "J");
+		}
+		
+		if (this.valor.matches("12")) {
+			this.valor = ("Q" + " ");
+		}
+		
+		if (this.valor2.matches("12")) {
+			this.valor2 = ("_" + "Q");
+		}
+		
+		if (this.valor.matches("13")) {
+			this.valor = ("K" + " ");
+		}
+		
+		if (this.valor2.matches("13")) {
+			this.valor2 = ("_" + "K");
+		}
+		
 		if (this.id.length() < 2) {
-			this.id = (" " + id);
+			this.id = ("·" + id);
 		}
 	}
 
