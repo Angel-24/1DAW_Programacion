@@ -21,4 +21,3 @@ public class Libro extends Cosa{
 		this.autor = autor;
 	}
 }
-

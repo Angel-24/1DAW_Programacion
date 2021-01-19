@@ -2,17 +2,15 @@ package tutorialJava.capitulo04.ejerciciosSobreHerencia.circuitoElectronico;
 
 public class Componente {
 
+	protected Componente a;
 	protected String nombre;
-	protected String a;
-	protected String b;
+	protected Componente b;
 	
-	public Componente(String nombre, String a, String b) {
+	public Componente(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.nombre = a;
-		this.nombre = a;
 	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -21,27 +19,53 @@ public class Componente {
 		this.nombre = nombre;
 	}
 
-	public String getA() {
+
+	
+	
+	/**
+	 * @return the a
+	 */
+	public Componente getA() {
 		return a;
 	}
 
-	public void setA(String a) {
+
+	/**
+	 * @param a the a to set
+	 */
+	public void setA(Componente a) {
 		this.a = a;
 	}
 
-	public String getB() {
+
+	/**
+	 * @return the b
+	 */
+	public Componente getB() {
 		return b;
 	}
 
-	public void setB(String b) {
+
+	/**
+	 * @param b the b to set
+	 */
+	public void setB(Componente b) {
 		this.b = b;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Componente [nombre=" + nombre + ", a=" + a + ", b=" + b + ", getNombre()=" + getNombre() + ", getA()="
+		
+/*		return "Componente [nombre=" + nombre + ", a=" + a + ", b=" + b + ", getNombre()=" + getNombre() + ", getA()="
 				+ getA() + ", getB()=" + getB() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 				+ ", toString()=" + super.toString() + "]";
+*/		
+//		return "[Anterior: "+ a + nombre + "Siguiente: " + b + " ]";
+		return a.nombre +" "+ b.nombre;
+		
 	}
+	
+	
 	
 }

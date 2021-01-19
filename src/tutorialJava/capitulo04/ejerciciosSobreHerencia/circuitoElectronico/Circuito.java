@@ -8,8 +8,17 @@ public class Circuito {
 
 	public static void main(String[] args) {
 		
-		System.out.println();
-
+		ComponenteBateria bateria = new ComponenteBateria("Batería", 1);
+		ComponenteResistencia resistencia = new ComponenteResistencia("Resistencia", 1);
+		ComponenteInterruptor interruptor = new ComponenteInterruptor("Interruptor", true);
+		ComponenteLed led = new ComponenteLed("Led", 1);
+		
+		bateria.setA(interruptor); bateria.setB(resistencia);
+		resistencia.setA(bateria); resistencia.setB(led);
+		interruptor.setA(led); interruptor.setB(bateria);
+		led.setA(interruptor); led.setB(resistencia);
+		
+		System.out.println(bateria +"\n"+ resistencia +"\n"+ interruptor +"\n"+ led);
 	}
 
 }
