@@ -7,7 +7,7 @@ public class Baloncesto {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		creaArrayNumerosUsuario(CromoBaloncesto);
+//		creaArrayNumerosUsuario(CromoBaloncesto);
 
 	}
 

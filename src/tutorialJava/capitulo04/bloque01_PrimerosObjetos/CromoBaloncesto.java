@@ -4,7 +4,7 @@ import tutorialJava.Utils;
 
 public class CromoBaloncesto {
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		String nombreJugador;
@@ -13,13 +13,13 @@ public class CromoBaloncesto {
 		float puntosMediosPorPartido;
 
 	}
-
-	public CromoBaloncesto1() {
+*/
+/*	public CromoBaloncesto1() {
 		return;
 	}
-
+*/
 	public CromoBaloncesto() {
-		String nombreJugador;
+		String nombreJugador = null;
 		int alturaCm;
 		int pesoKg;
 		float puntosMediosPorPartido;
@@ -27,10 +27,11 @@ public class CromoBaloncesto {
 		System.out.println("A");
 		return;
 	}
-
+	/*
+	@Override
 	public String toString() {
 		return "CromoBaloncesto [nombre=" + nombreJugador + ", altura=" + alturaCm + ", peso=" + pesoKg
 				+ ",Puntos medios por Partido=" + puntosMediosPorPartido;
 	}
-
+*/
 }
