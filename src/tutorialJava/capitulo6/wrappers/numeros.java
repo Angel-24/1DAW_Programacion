@@ -12,7 +12,7 @@ public class numeros {
 		
 		for (;n <= 100; n++) {
 		
-			String hex[] = ;
+			System.out.println(Integer.toHexString(n));
 		
 		}
 	}
