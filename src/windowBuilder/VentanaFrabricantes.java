@@ -75,6 +75,8 @@ public class VentanaFrabricantes {
 			
 	}
 	
+	
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -121,7 +123,7 @@ public class VentanaFrabricantes {
 		gbc_jtfcif.gridx = 1;
 		gbc_jtfcif.gridy = 1;
 		frame.getContentPane().add(jtfcif, gbc_jtfcif);
-		textField_2.setColumns(10);
+		jtfcif.setColumns(10);
 		
 		nombre = new JLabel("Nombre:");
 		GridBagConstraints gbc_nombre = new GridBagConstraints();

@@ -194,6 +194,14 @@ public class ControladorFabricante extends ControladorBBDD {
 		}
 
 	}
+
+
+
+
+	public static Object getInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
