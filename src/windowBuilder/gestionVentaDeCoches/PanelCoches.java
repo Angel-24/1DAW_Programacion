@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Rectangle;
+import javax.swing.SwingConstants;
 
 public class PanelCoches {
 
@@ -97,16 +98,16 @@ public class PanelCoches {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 525, 300);
+		frame.setBounds(100, 100, 550, 210);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 30, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblId = new JLabel("Id:");
+		JLabel lblId = new JLabel("Id: ");
 		GridBagConstraints gbc_lblId = new GridBagConstraints();
 		gbc_lblId.insets = new Insets(0, 0, 5, 5);
 		gbc_lblId.anchor = GridBagConstraints.EAST;
@@ -124,7 +125,7 @@ public class PanelCoches {
 		frame.getContentPane().add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
-		lblIdFabricante = new JLabel("ID Fabricante:");
+		lblIdFabricante = new JLabel("ID Fabricante: ");
 		GridBagConstraints gbc_lblIdFabricante = new GridBagConstraints();
 		gbc_lblIdFabricante.anchor = GridBagConstraints.EAST;
 		gbc_lblIdFabricante.fill = GridBagConstraints.VERTICAL;
@@ -142,7 +143,7 @@ public class PanelCoches {
 		frame.getContentPane().add(jtfIdFabricante, gbc_jtfIdFabricante);
 		jtfIdFabricante.setColumns(10);
 		
-		lblBastidor = new JLabel("Bastidor:");
+		lblBastidor = new JLabel("Bastidor: ");
 		GridBagConstraints gbc_lblBastidor = new GridBagConstraints();
 		gbc_lblBastidor.anchor = GridBagConstraints.SOUTHEAST;
 		gbc_lblBastidor.insets = new Insets(0, 0, 5, 5);
@@ -159,7 +160,7 @@ public class PanelCoches {
 		frame.getContentPane().add(jtfBastidor, gbc_jtfBastidor);
 		jtfBastidor.setColumns(10);
 		
-		lblModelo = new JLabel("Modelo:");
+		lblModelo = new JLabel("Modelo: ");
 		GridBagConstraints gbc_lblModelo = new GridBagConstraints();
 		gbc_lblModelo.anchor = GridBagConstraints.EAST;
 		gbc_lblModelo.insets = new Insets(0, 0, 5, 5);
@@ -176,7 +177,7 @@ public class PanelCoches {
 		frame.getContentPane().add(jtfModelo, gbc_jtfModelo);
 		jtfModelo.setColumns(10);
 		
-		lblColor = new JLabel("Color:");
+		lblColor = new JLabel("Color: ");
 		GridBagConstraints gbc_lblColor = new GridBagConstraints();
 		gbc_lblColor.anchor = GridBagConstraints.EAST;
 		gbc_lblColor.insets = new Insets(0, 0, 5, 5);
@@ -195,15 +196,18 @@ public class PanelCoches {
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
+		gbc_panel.gridheight = 3;
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.gridwidth = 2;
-		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 5;
 		frame.getContentPane().add(panel, gbc_panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		FlowLayout fl_panel = new FlowLayout(FlowLayout.CENTER, 5, 5);
+		panel.setLayout(fl_panel);
 		
 		btnPrimero = new JButton("<<");
+		btnPrimero.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnPrimero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actual = ControladorCoche.getInstance().findPrimero();
@@ -213,6 +217,7 @@ public class PanelCoches {
 		panel.add(btnPrimero);
 		
 		btnAnterior = new JButton("<");
+		btnAnterior.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnAnterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actual = ControladorCoche.getInstance().findAnterior(actual.getId());
@@ -222,6 +227,7 @@ public class PanelCoches {
 		panel.add(btnAnterior);
 		
 		btnSiguiente = new JButton(">");
+		btnSiguiente.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actual = ControladorCoche.getInstance().findSiguiente(actual.getId());
@@ -231,6 +237,7 @@ public class PanelCoches {
 		panel.add(btnSiguiente);
 		
 		btnUltimo = new JButton(">>");
+		btnUltimo.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnUltimo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actual = ControladorCoche.getInstance().findUltimo();
@@ -240,6 +247,7 @@ public class PanelCoches {
 		panel.add(btnUltimo);
 		
 		btnGuardar = new JButton("Guardar");
+		btnGuardar.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				guardar();
@@ -248,6 +256,7 @@ public class PanelCoches {
 		panel.add(btnGuardar);
 		
 		btnNuevo = new JButton("Nuevo");
+		btnNuevo.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnNuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vaciarCampos();
@@ -256,6 +265,7 @@ public class PanelCoches {
 		panel.add(btnNuevo);
 		
 		btnBorrar = new JButton("Borrar");
+		btnBorrar.setVerticalAlignment(SwingConstants.BOTTOM);
 		btnBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				borrar();

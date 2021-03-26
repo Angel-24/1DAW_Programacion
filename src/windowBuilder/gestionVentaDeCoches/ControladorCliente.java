@@ -55,7 +55,7 @@ public class ControladorCliente {
 				c.setLocalidad(rs.getString("localidad"));
 				c.setDniNie(rs.getString("dninie"));
 				c.setFechaNac(rs.getString("fechanac"));
-				c.setActivo(rs.getInt("activo"));
+//				c.setActivo(rs.getInt("activo"));
 			}
 		}
 		catch (Exception ex) {
@@ -82,7 +82,7 @@ public class ControladorCliente {
 				c.setLocalidad(rs.getString("localidad"));
 				c.setDniNie(rs.getString("dninie"));
 				c.setFechaNac(rs.getString("fechanac"));
-				c.setActivo(rs.getInt("activo"));
+//				c.setActivo(rs.getInt("activo"));
 			}
 		}
 		catch (Exception ex) {
@@ -108,7 +108,7 @@ public class ControladorCliente {
 				c.setLocalidad(rs.getString("localidad"));
 				c.setDniNie(rs.getString("dninie"));
 				c.setFechaNac(rs.getString("fechanac"));
-				c.setActivo(rs.getInt("activo"));
+//				c.setActivo(rs.getInt("activo"));
 			}
 		}
 		catch (Exception ex) {
@@ -136,7 +136,7 @@ public class ControladorCliente {
 				c.setLocalidad(rs.getString("localidad"));
 				c.setDniNie(rs.getString("dninie"));
 				c.setFechaNac(rs.getString("fechanac"));
-				c.setActivo(rs.getInt("activo"));
+//				c.setActivo(rs.getInt("activo"));
 			}
 		}
 		catch (Exception ex) {

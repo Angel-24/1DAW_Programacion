@@ -15,6 +15,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
 
 public class PanelClientes {
 
@@ -43,8 +44,7 @@ public class PanelClientes {
 	private JTextField jtfDniNie;
 	private JLabel lblFechaNac;
 	private JTextField jtfFechaNac;
-	private JLabel lblActivo;
-	private JTextField jtfActivo;
+	private JCheckBox chckbxActivo;
 
 
 	/**
@@ -83,7 +83,8 @@ public class PanelClientes {
 			this.jtfLocalidad.setText(this.actual.getLocalidad());
 			this.jtfDniNie.setText(this.actual.getDniNie());
 			this.jtfFechaNac.setText(this.actual.getFechaNac());
-			this.jtfActivo.setText("" + this.actual.getActivo());
+			this.chckbxActivo.setSelected(true);
+//			this.chckbxActivo.setText("" + this.actual.getActivo());
 		}
 	}
 	
@@ -97,7 +98,7 @@ public class PanelClientes {
 		this.actual.setLocalidad(jtfLocalidad.getText());
 		this.actual.setDniNie(jtfDniNie.getText());
 		this.actual.setFechaNac(jtfFechaNac.getText());
-		this.actual.setActivo(Integer.parseInt(jtfActivo.getText()));
+//		this.actual.setActivo(1);
 	}
 	
 	/**
@@ -105,16 +106,16 @@ public class PanelClientes {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 525, 300);
+		frame.setBounds(100, 100, 525, 235);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
-		JLabel lblId = new JLabel("Id:");
+		JLabel lblId = new JLabel(" Id: ");
 		GridBagConstraints gbc_lblId = new GridBagConstraints();
 		gbc_lblId.insets = new Insets(0, 0, 5, 5);
 		gbc_lblId.anchor = GridBagConstraints.EAST;
@@ -132,83 +133,109 @@ public class PanelClientes {
 		frame.getContentPane().add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
-		JLabel lblNombre = new JLabel("Nombre:");
-		GridBagConstraints gbc_lblIdFabricante = new GridBagConstraints();
-		gbc_lblIdFabricante.anchor = GridBagConstraints.EAST;
-		gbc_lblIdFabricante.fill = GridBagConstraints.VERTICAL;
-		gbc_lblIdFabricante.insets = new Insets(0, 0, 5, 5);
-		gbc_lblIdFabricante.gridx = 0;
-		gbc_lblIdFabricante.gridy = 1;
-		frame.getContentPane().add(lblNombre, gbc_lblIdFabricante);
+		lblNombre = new JLabel("Nombre: ");
+		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
+		gbc_lblNombre.anchor = GridBagConstraints.EAST;
+		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNombre.gridx = 0;
+		gbc_lblNombre.gridy = 1;
+		frame.getContentPane().add(lblNombre, gbc_lblNombre);
 		
 		jtfNombre = new JTextField();
-		jtfNombre.setEnabled(false);
-		GridBagConstraints gbc_jtfIdFabricante = new GridBagConstraints();
-		gbc_jtfIdFabricante.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfIdFabricante.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfIdFabricante.gridx = 1;
-		gbc_jtfIdFabricante.gridy = 1;
-		frame.getContentPane().add(jtfIdFabricante, gbc_jtfIdFabricante);
-		jtfIdFabricante.setColumns(10);
+		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
+		gbc_jtfNombre.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfNombre.gridx = 1;
+		gbc_jtfNombre.gridy = 1;
+		frame.getContentPane().add(jtfNombre, gbc_jtfNombre);
+		jtfNombre.setColumns(10);
 		
-		lblBastidor = new JLabel("Bastidor:");
-		GridBagConstraints gbc_lblBastidor = new GridBagConstraints();
-		gbc_lblBastidor.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_lblBastidor.insets = new Insets(0, 0, 5, 5);
-		gbc_lblBastidor.gridx = 0;
-		gbc_lblBastidor.gridy = 2;
-		frame.getContentPane().add(lblBastidor, gbc_lblBastidor);
+		lblApellidos = new JLabel("Apellidos: ");
+		GridBagConstraints gbc_lblApellidos = new GridBagConstraints();
+		gbc_lblApellidos.anchor = GridBagConstraints.EAST;
+		gbc_lblApellidos.insets = new Insets(0, 0, 5, 5);
+		gbc_lblApellidos.gridx = 0;
+		gbc_lblApellidos.gridy = 2;
+		frame.getContentPane().add(lblApellidos, gbc_lblApellidos);
 		
-		jtfBastidor = new JTextField();
-		GridBagConstraints gbc_jtfBastidor = new GridBagConstraints();
-		gbc_jtfBastidor.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfBastidor.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfBastidor.gridx = 1;
-		gbc_jtfBastidor.gridy = 2;
-		frame.getContentPane().add(jtfBastidor, gbc_jtfBastidor);
-		jtfBastidor.setColumns(10);
+		jtfApellidos = new JTextField();
+		GridBagConstraints gbc_jtfApellidos = new GridBagConstraints();
+		gbc_jtfApellidos.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfApellidos.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfApellidos.gridx = 1;
+		gbc_jtfApellidos.gridy = 2;
+		frame.getContentPane().add(jtfApellidos, gbc_jtfApellidos);
+		jtfApellidos.setColumns(10);
 		
-		lblModelo = new JLabel("Modelo:");
-		GridBagConstraints gbc_lblModelo = new GridBagConstraints();
-		gbc_lblModelo.anchor = GridBagConstraints.EAST;
-		gbc_lblModelo.insets = new Insets(0, 0, 5, 5);
-		gbc_lblModelo.gridx = 0;
-		gbc_lblModelo.gridy = 3;
-		frame.getContentPane().add(lblModelo, gbc_lblModelo);
+		lblLocalidad = new JLabel("Localidad: ");
+		GridBagConstraints gbc_lblLocalidad = new GridBagConstraints();
+		gbc_lblLocalidad.anchor = GridBagConstraints.EAST;
+		gbc_lblLocalidad.insets = new Insets(0, 0, 5, 5);
+		gbc_lblLocalidad.gridx = 0;
+		gbc_lblLocalidad.gridy = 3;
+		frame.getContentPane().add(lblLocalidad, gbc_lblLocalidad);
 		
-		jtfModelo = new JTextField();
-		GridBagConstraints gbc_jtfModelo = new GridBagConstraints();
-		gbc_jtfModelo.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfModelo.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfModelo.gridx = 1;
-		gbc_jtfModelo.gridy = 3;
-		frame.getContentPane().add(jtfModelo, gbc_jtfModelo);
-		jtfModelo.setColumns(10);
+		jtfLocalidad = new JTextField();
+		GridBagConstraints gbc_jtfLocalidad = new GridBagConstraints();
+		gbc_jtfLocalidad.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfLocalidad.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfLocalidad.gridx = 1;
+		gbc_jtfLocalidad.gridy = 3;
+		frame.getContentPane().add(jtfLocalidad, gbc_jtfLocalidad);
+		jtfLocalidad.setColumns(10);
 		
-		lblColor = new JLabel("Color:");
-		GridBagConstraints gbc_lblColor = new GridBagConstraints();
-		gbc_lblColor.anchor = GridBagConstraints.EAST;
-		gbc_lblColor.insets = new Insets(0, 0, 5, 5);
-		gbc_lblColor.gridx = 0;
-		gbc_lblColor.gridy = 4;
-		frame.getContentPane().add(lblColor, gbc_lblColor);
+		lblDniNie = new JLabel("DniNie: ");
+		GridBagConstraints gbc_lblDniNie = new GridBagConstraints();
+		gbc_lblDniNie.anchor = GridBagConstraints.EAST;
+		gbc_lblDniNie.insets = new Insets(0, 0, 5, 5);
+		gbc_lblDniNie.gridx = 0;
+		gbc_lblDniNie.gridy = 4;
+		frame.getContentPane().add(lblDniNie, gbc_lblDniNie);
 		
-		jtfColor = new JTextField();
-		GridBagConstraints gbc_jtfColor = new GridBagConstraints();
-		gbc_jtfColor.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfColor.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfColor.gridx = 1;
-		gbc_jtfColor.gridy = 4;
-		frame.getContentPane().add(jtfColor, gbc_jtfColor);
-		jtfColor.setColumns(10);
+		jtfDniNie = new JTextField();
+		GridBagConstraints gbc_jtfDniNie = new GridBagConstraints();
+		gbc_jtfDniNie.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfDniNie.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfDniNie.gridx = 1;
+		gbc_jtfDniNie.gridy = 4;
+		frame.getContentPane().add(jtfDniNie, gbc_jtfDniNie);
+		jtfDniNie.setColumns(10);
+		
+		lblFechaNac = new JLabel("FechaNac: ");
+		GridBagConstraints gbc_lblFechaNac = new GridBagConstraints();
+		gbc_lblFechaNac.anchor = GridBagConstraints.NORTHEAST;
+		gbc_lblFechaNac.insets = new Insets(0, 0, 5, 5);
+		gbc_lblFechaNac.gridx = 0;
+		gbc_lblFechaNac.gridy = 5;
+		frame.getContentPane().add(lblFechaNac, gbc_lblFechaNac);
+		
+		jtfFechaNac = new JTextField();
+		GridBagConstraints gbc_jtfFechaNac = new GridBagConstraints();
+		gbc_jtfFechaNac.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfFechaNac.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfFechaNac.gridx = 1;
+		gbc_jtfFechaNac.gridy = 5;
+		frame.getContentPane().add(jtfFechaNac, gbc_jtfFechaNac);
+		jtfFechaNac.setColumns(10);
+		
+		chckbxActivo = new JCheckBox("Activo");
+//		chckbxActivo.setSelected(true);
+		GridBagConstraints gbc_chckbxActivo = new GridBagConstraints();
+		gbc_chckbxActivo.insets = new Insets(0, 0, 5, 5);
+		gbc_chckbxActivo.gridx = 0;
+		gbc_chckbxActivo.gridy = 6;
+		frame.getContentPane().add(chckbxActivo, gbc_chckbxActivo);
+		
+
+		
+		
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.gridwidth = 2;
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 5;
+		gbc_panel.gridy = 7;
 		frame.getContentPane().add(panel, gbc_panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -299,7 +326,9 @@ public class PanelClientes {
 	 */
 	private void vaciarCampos() {
 		this.jtfId.setText("0");
-		this.jtfActivo.setText("0");
+		this.chckbxActivo.setSelected(false);
+//		this.chckbxActivo.setText("0");
+		this.jtfLocalidad.setText("");
 		this.jtfNombre.setText("");
 		this.jtfApellidos.setText("");
 		this.jtfDniNie.setText("");

@@ -85,7 +85,7 @@ public class PanelFabricantes {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 525, 300);
+		frame.setBounds(100, 100, 515, 145);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0};
@@ -149,7 +149,8 @@ public class PanelFabricantes {
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.fill = GridBagConstraints.VERTICAL;
+		gbc_panel.gridheight = 2;
+		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.gridwidth = 2;
 		gbc_panel.gridx = 0;
