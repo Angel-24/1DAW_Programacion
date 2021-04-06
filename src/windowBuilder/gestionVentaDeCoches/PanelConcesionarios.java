@@ -17,11 +17,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 
-public class PanelConcesionarios {
+public class PanelConcesionarios extends JPanel {
 
 	Concesionario actual = null;
-	
-	private JFrame frame;
 	
 	private JTextField jtfId;
 	private JLabel lblNombre;
@@ -41,27 +39,11 @@ public class PanelConcesionarios {
 	private JLabel lblCif;
 	private JTextField jtfCif;
 
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelConcesionarios window = new PanelConcesionarios();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	/**
 	 * Create the application.
 	 */
 	public PanelConcesionarios() {
+		super();
 		initialize();
 		this.actual = ControladorConcesionario.getInstance().findPrimero();
 		cargarActualEnPantalla();
@@ -93,32 +75,30 @@ public class PanelConcesionarios {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 525, 186);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {0, 0, 0};
 		gridBagLayout.rowHeights = new int[] {30, 0, 0, 30};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
-		frame.getContentPane().setLayout(gridBagLayout);
+		this.setLayout(gridBagLayout);
 		
 		JLabel lblId = new JLabel(" Id: ");
 		GridBagConstraints gbc_lblId = new GridBagConstraints();
 		gbc_lblId.insets = new Insets(0, 0, 5, 5);
-		gbc_lblId.anchor = GridBagConstraints.EAST;
+		gbc_lblId.anchor = GridBagConstraints.NORTHEAST;
 		gbc_lblId.gridx = 0;
 		gbc_lblId.gridy = 0;
-		frame.getContentPane().add(lblId, gbc_lblId);
+		this.add(lblId, gbc_lblId);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
 		GridBagConstraints gbc_jtfId = new GridBagConstraints();
+		gbc_jtfId.anchor = GridBagConstraints.NORTH;
 		gbc_jtfId.insets = new Insets(0, 0, 5, 0);
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
 		gbc_jtfId.gridy = 0;
-		frame.getContentPane().add(jtfId, gbc_jtfId);
+		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
 		lblCif = new JLabel("Cif: ");
@@ -127,7 +107,7 @@ public class PanelConcesionarios {
 		gbc_lblCif.insets = new Insets(0, 0, 5, 5);
 		gbc_lblCif.gridx = 0;
 		gbc_lblCif.gridy = 1;
-		frame.getContentPane().add(lblCif, gbc_lblCif);
+		this.add(lblCif, gbc_lblCif);
 		
 		jtfCif = new JTextField();
 		GridBagConstraints gbc_jtfCif = new GridBagConstraints();
@@ -135,7 +115,7 @@ public class PanelConcesionarios {
 		gbc_jtfCif.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfCif.gridx = 1;
 		gbc_jtfCif.gridy = 1;
-		frame.getContentPane().add(jtfCif, gbc_jtfCif);
+		this.add(jtfCif, gbc_jtfCif);
 		jtfCif.setColumns(10);
 		
 		lblNombre = new JLabel("Nombre: ");
@@ -144,7 +124,7 @@ public class PanelConcesionarios {
 		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNombre.gridx = 0;
 		gbc_lblNombre.gridy = 2;
-		frame.getContentPane().add(lblNombre, gbc_lblNombre);
+		this.add(lblNombre, gbc_lblNombre);
 		
 		jtfNombre = new JTextField();
 		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
@@ -152,7 +132,7 @@ public class PanelConcesionarios {
 		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfNombre.gridx = 1;
 		gbc_jtfNombre.gridy = 2;
-		frame.getContentPane().add(jtfNombre, gbc_jtfNombre);
+		this.add(jtfNombre, gbc_jtfNombre);
 		jtfNombre.setColumns(10);
 		
 		lblLocalidad = new JLabel("Localidad: ");
@@ -161,7 +141,7 @@ public class PanelConcesionarios {
 		gbc_lblLocalidad.insets = new Insets(0, 0, 5, 5);
 		gbc_lblLocalidad.gridx = 0;
 		gbc_lblLocalidad.gridy = 3;
-		frame.getContentPane().add(lblLocalidad, gbc_lblLocalidad);
+		this.add(lblLocalidad, gbc_lblLocalidad);
 		
 		jtfLocalidad = new JTextField();
 		GridBagConstraints gbc_jtfLocalidad = new GridBagConstraints();
@@ -169,7 +149,7 @@ public class PanelConcesionarios {
 		gbc_jtfLocalidad.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfLocalidad.gridx = 1;
 		gbc_jtfLocalidad.gridy = 3;
-		frame.getContentPane().add(jtfLocalidad, gbc_jtfLocalidad);
+		this.add(jtfLocalidad, gbc_jtfLocalidad);
 		jtfLocalidad.setColumns(10);
 		
 
@@ -178,12 +158,11 @@ public class PanelConcesionarios {
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.gridwidth = 2;
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 4;
-		frame.getContentPane().add(panel, gbc_panel);
+		this.add(panel, gbc_panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnPrimero = new JButton("<<");

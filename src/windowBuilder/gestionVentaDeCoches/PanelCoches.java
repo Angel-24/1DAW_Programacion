@@ -18,11 +18,9 @@ import java.awt.event.ActionEvent;
 import java.awt.Rectangle;
 import javax.swing.SwingConstants;
 
-public class PanelCoches {
+public class PanelCoches extends JPanel {
 
 	Coche actual = null;
-	
-	private JFrame frame;
 	
 	private JTextField jtfId;
 	private JLabel lblIdFabricante;
@@ -45,25 +43,10 @@ public class PanelCoches {
 	private JTextField jtfColor;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelCoches window = new PanelCoches();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the application.
 	 */
 	public PanelCoches() {
+		super();
 		initialize();
 		this.actual = ControladorCoche.getInstance().findPrimero();
 		cargarActualEnPantalla();
@@ -97,15 +80,12 @@ public class PanelCoches {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 550, 210);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {0, 0, 0};
 		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 30, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0};
-		frame.getContentPane().setLayout(gridBagLayout);
+		this.setLayout(gridBagLayout);
 		
 		JLabel lblId = new JLabel("Id: ");
 		GridBagConstraints gbc_lblId = new GridBagConstraints();
@@ -113,7 +93,7 @@ public class PanelCoches {
 		gbc_lblId.anchor = GridBagConstraints.EAST;
 		gbc_lblId.gridx = 0;
 		gbc_lblId.gridy = 0;
-		frame.getContentPane().add(lblId, gbc_lblId);
+		this.add(lblId, gbc_lblId);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
@@ -122,7 +102,7 @@ public class PanelCoches {
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
 		gbc_jtfId.gridy = 0;
-		frame.getContentPane().add(jtfId, gbc_jtfId);
+		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
 		lblIdFabricante = new JLabel("ID Fabricante: ");
@@ -132,7 +112,7 @@ public class PanelCoches {
 		gbc_lblIdFabricante.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdFabricante.gridx = 0;
 		gbc_lblIdFabricante.gridy = 1;
-		frame.getContentPane().add(lblIdFabricante, gbc_lblIdFabricante);
+		this.add(lblIdFabricante, gbc_lblIdFabricante);
 		
 		jtfIdFabricante = new JTextField();
 		GridBagConstraints gbc_jtfIdFabricante = new GridBagConstraints();
@@ -140,7 +120,7 @@ public class PanelCoches {
 		gbc_jtfIdFabricante.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdFabricante.gridx = 1;
 		gbc_jtfIdFabricante.gridy = 1;
-		frame.getContentPane().add(jtfIdFabricante, gbc_jtfIdFabricante);
+		this.add(jtfIdFabricante, gbc_jtfIdFabricante);
 		jtfIdFabricante.setColumns(10);
 		
 		lblBastidor = new JLabel("Bastidor: ");
@@ -149,7 +129,7 @@ public class PanelCoches {
 		gbc_lblBastidor.insets = new Insets(0, 0, 5, 5);
 		gbc_lblBastidor.gridx = 0;
 		gbc_lblBastidor.gridy = 2;
-		frame.getContentPane().add(lblBastidor, gbc_lblBastidor);
+		this.add(lblBastidor, gbc_lblBastidor);
 		
 		jtfBastidor = new JTextField();
 		GridBagConstraints gbc_jtfBastidor = new GridBagConstraints();
@@ -157,7 +137,7 @@ public class PanelCoches {
 		gbc_jtfBastidor.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfBastidor.gridx = 1;
 		gbc_jtfBastidor.gridy = 2;
-		frame.getContentPane().add(jtfBastidor, gbc_jtfBastidor);
+		this.add(jtfBastidor, gbc_jtfBastidor);
 		jtfBastidor.setColumns(10);
 		
 		lblModelo = new JLabel("Modelo: ");
@@ -166,7 +146,7 @@ public class PanelCoches {
 		gbc_lblModelo.insets = new Insets(0, 0, 5, 5);
 		gbc_lblModelo.gridx = 0;
 		gbc_lblModelo.gridy = 3;
-		frame.getContentPane().add(lblModelo, gbc_lblModelo);
+		this.add(lblModelo, gbc_lblModelo);
 		
 		jtfModelo = new JTextField();
 		GridBagConstraints gbc_jtfModelo = new GridBagConstraints();
@@ -174,7 +154,7 @@ public class PanelCoches {
 		gbc_jtfModelo.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfModelo.gridx = 1;
 		gbc_jtfModelo.gridy = 3;
-		frame.getContentPane().add(jtfModelo, gbc_jtfModelo);
+		this.add(jtfModelo, gbc_jtfModelo);
 		jtfModelo.setColumns(10);
 		
 		lblColor = new JLabel("Color: ");
@@ -183,7 +163,7 @@ public class PanelCoches {
 		gbc_lblColor.insets = new Insets(0, 0, 5, 5);
 		gbc_lblColor.gridx = 0;
 		gbc_lblColor.gridy = 4;
-		frame.getContentPane().add(lblColor, gbc_lblColor);
+		this.add(lblColor, gbc_lblColor);
 		
 		jtfColor = new JTextField();
 		GridBagConstraints gbc_jtfColor = new GridBagConstraints();
@@ -191,7 +171,7 @@ public class PanelCoches {
 		gbc_jtfColor.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfColor.gridx = 1;
 		gbc_jtfColor.gridy = 4;
-		frame.getContentPane().add(jtfColor, gbc_jtfColor);
+		this.add(jtfColor, gbc_jtfColor);
 		jtfColor.setColumns(10);
 		
 		panel = new JPanel();
@@ -202,7 +182,7 @@ public class PanelCoches {
 		gbc_panel.gridwidth = 2;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 5;
-		frame.getContentPane().add(panel, gbc_panel);
+		this.add(panel, gbc_panel);
 		FlowLayout fl_panel = new FlowLayout(FlowLayout.CENTER, 5, 5);
 		panel.setLayout(fl_panel);
 		

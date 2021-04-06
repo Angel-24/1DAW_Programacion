@@ -16,11 +16,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PanelVentas {
+public class PanelVentas extends JPanel {
 
 	Venta actual = null;
-	
-	private JFrame frame;
+
 	private JTextField jtfId;
 	private JPanel panel;
 	private JButton btnPrimero;
@@ -42,25 +41,10 @@ public class PanelVentas {
 	private JTextField jtfPrecioVenta;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelVentas window = new PanelVentas();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the application.
 	 */
 	public PanelVentas() {
+		super();
 		initialize();
 		this.actual = ControladorVenta.getInstance().findPrimero();
 		cargarActualEnPantalla();
@@ -96,15 +80,12 @@ public class PanelVentas {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 525, 212);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0};
 		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		this.setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Id:");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -112,7 +93,7 @@ public class PanelVentas {
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel.gridx = 0;
 		gbc_lblNewLabel.gridy = 0;
-		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		this.add(lblNewLabel, gbc_lblNewLabel);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
@@ -121,7 +102,7 @@ public class PanelVentas {
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
 		gbc_jtfId.gridy = 0;
-		frame.getContentPane().add(jtfId, gbc_jtfId);
+		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
 		lblIdCliente = new JLabel("IdCliente: ");
@@ -130,7 +111,7 @@ public class PanelVentas {
 		gbc_lblIdCliente.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdCliente.gridx = 0;
 		gbc_lblIdCliente.gridy = 1;
-		frame.getContentPane().add(lblIdCliente, gbc_lblIdCliente);
+		this.add(lblIdCliente, gbc_lblIdCliente);
 		
 		jtfIdCliente = new JTextField();
 		GridBagConstraints gbc_jtfIdCliente = new GridBagConstraints();
@@ -138,7 +119,7 @@ public class PanelVentas {
 		gbc_jtfIdCliente.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdCliente.gridx = 1;
 		gbc_jtfIdCliente.gridy = 1;
-		frame.getContentPane().add(jtfIdCliente, gbc_jtfIdCliente);
+		this.add(jtfIdCliente, gbc_jtfIdCliente);
 		jtfIdCliente.setColumns(10);
 		
 		lblIdConcesionario = new JLabel("IdConcesionario: ");
@@ -147,7 +128,7 @@ public class PanelVentas {
 		gbc_lblIdConcesionario.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdConcesionario.gridx = 0;
 		gbc_lblIdConcesionario.gridy = 2;
-		frame.getContentPane().add(lblIdConcesionario, gbc_lblIdConcesionario);
+		this.add(lblIdConcesionario, gbc_lblIdConcesionario);
 		
 		jtfIdConcesionario = new JTextField();
 		GridBagConstraints gbc_jtfIdConcesionario = new GridBagConstraints();
@@ -155,7 +136,7 @@ public class PanelVentas {
 		gbc_jtfIdConcesionario.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdConcesionario.gridx = 1;
 		gbc_jtfIdConcesionario.gridy = 2;
-		frame.getContentPane().add(jtfIdConcesionario, gbc_jtfIdConcesionario);
+		this.add(jtfIdConcesionario, gbc_jtfIdConcesionario);
 		jtfIdConcesionario.setColumns(10);
 		
 		lblIdCoche = new JLabel("IdCoche: ");
@@ -164,7 +145,7 @@ public class PanelVentas {
 		gbc_lblIdCoche.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdCoche.gridx = 0;
 		gbc_lblIdCoche.gridy = 3;
-		frame.getContentPane().add(lblIdCoche, gbc_lblIdCoche);
+		this.add(lblIdCoche, gbc_lblIdCoche);
 		
 		jtfIdCoche = new JTextField();
 		GridBagConstraints gbc_jtfIdCoche = new GridBagConstraints();
@@ -172,7 +153,7 @@ public class PanelVentas {
 		gbc_jtfIdCoche.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdCoche.gridx = 1;
 		gbc_jtfIdCoche.gridy = 3;
-		frame.getContentPane().add(jtfIdCoche, gbc_jtfIdCoche);
+		this.add(jtfIdCoche, gbc_jtfIdCoche);
 		jtfIdCoche.setColumns(10);
 		
 		lblFecha = new JLabel("Fecha: ");
@@ -181,7 +162,7 @@ public class PanelVentas {
 		gbc_lblFecha.insets = new Insets(0, 0, 5, 5);
 		gbc_lblFecha.gridx = 0;
 		gbc_lblFecha.gridy = 4;
-		frame.getContentPane().add(lblFecha, gbc_lblFecha);
+		this.add(lblFecha, gbc_lblFecha);
 		
 		jtfFecha = new JTextField();
 		GridBagConstraints gbc_jtfFecha = new GridBagConstraints();
@@ -189,7 +170,7 @@ public class PanelVentas {
 		gbc_jtfFecha.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfFecha.gridx = 1;
 		gbc_jtfFecha.gridy = 4;
-		frame.getContentPane().add(jtfFecha, gbc_jtfFecha);
+		this.add(jtfFecha, gbc_jtfFecha);
 		jtfFecha.setColumns(10);
 		
 		lblPrecioVenta = new JLabel("PrecioVenta: ");
@@ -198,7 +179,7 @@ public class PanelVentas {
 		gbc_lblPrecioVenta.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPrecioVenta.gridx = 0;
 		gbc_lblPrecioVenta.gridy = 5;
-		frame.getContentPane().add(lblPrecioVenta, gbc_lblPrecioVenta);
+		this.add(lblPrecioVenta, gbc_lblPrecioVenta);
 		
 		jtfPrecioVenta = new JTextField();
 		GridBagConstraints gbc_jtfPrecioVenta = new GridBagConstraints();
@@ -206,7 +187,7 @@ public class PanelVentas {
 		gbc_jtfPrecioVenta.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfPrecioVenta.gridx = 1;
 		gbc_jtfPrecioVenta.gridy = 5;
-		frame.getContentPane().add(jtfPrecioVenta, gbc_jtfPrecioVenta);
+		this.add(jtfPrecioVenta, gbc_jtfPrecioVenta);
 		jtfPrecioVenta.setColumns(10);
 		
 		panel = new JPanel();
@@ -215,7 +196,7 @@ public class PanelVentas {
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 6;
-		frame.getContentPane().add(panel, gbc_panel);
+		this.add(panel, gbc_panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnPrimero = new JButton("<<");

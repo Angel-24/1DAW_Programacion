@@ -16,11 +16,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PanelFabricantes {
+public class PanelFabricantes extends JPanel {
 
 	Fabricante actual = null;
-	
-	private JFrame frame;
+
 	private JTextField jtfId;
 	private JLabel lblNewLabel_1;
 	private JTextField jtfCif;
@@ -36,25 +35,10 @@ public class PanelFabricantes {
 	private JButton btnBorrar;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelFabricantes window = new PanelFabricantes();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the application.
 	 */
 	public PanelFabricantes() {
+		super();
 		initialize();
 		this.actual = ControladorFabricante.getInstance().findPrimero();
 		cargarActualEnPantalla();
@@ -84,15 +68,12 @@ public class PanelFabricantes {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 515, 145);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		this.setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Id:");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
@@ -100,7 +81,7 @@ public class PanelFabricantes {
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel.gridx = 0;
 		gbc_lblNewLabel.gridy = 0;
-		frame.getContentPane().add(lblNewLabel, gbc_lblNewLabel);
+		this.add(lblNewLabel, gbc_lblNewLabel);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
@@ -109,7 +90,7 @@ public class PanelFabricantes {
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
 		gbc_jtfId.gridy = 0;
-		frame.getContentPane().add(jtfId, gbc_jtfId);
+		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
 		lblNewLabel_1 = new JLabel("CIF:");
@@ -119,7 +100,7 @@ public class PanelFabricantes {
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 1;
-		frame.getContentPane().add(lblNewLabel_1, gbc_lblNewLabel_1);
+		this.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		jtfCif = new JTextField();
 		GridBagConstraints gbc_jtfCif = new GridBagConstraints();
@@ -127,7 +108,7 @@ public class PanelFabricantes {
 		gbc_jtfCif.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfCif.gridx = 1;
 		gbc_jtfCif.gridy = 1;
-		frame.getContentPane().add(jtfCif, gbc_jtfCif);
+		this.add(jtfCif, gbc_jtfCif);
 		jtfCif.setColumns(10);
 		
 		lblNewLabel_2 = new JLabel("Nombre:");
@@ -136,7 +117,7 @@ public class PanelFabricantes {
 		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_2.gridx = 0;
 		gbc_lblNewLabel_2.gridy = 2;
-		frame.getContentPane().add(lblNewLabel_2, gbc_lblNewLabel_2);
+		this.add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
 		jtfNombre = new JTextField();
 		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
@@ -144,18 +125,19 @@ public class PanelFabricantes {
 		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfNombre.gridx = 1;
 		gbc_jtfNombre.gridy = 2;
-		frame.getContentPane().add(jtfNombre, gbc_jtfNombre);
+		this.add(jtfNombre, gbc_jtfNombre);
 		jtfNombre.setColumns(10);
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.anchor = GridBagConstraints.SOUTH;
 		gbc_panel.gridheight = 2;
 		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.gridwidth = 2;
 		gbc_panel.gridx = 0;
 		gbc_panel.gridy = 3;
-		frame.getContentPane().add(panel, gbc_panel);
+		this.add(panel, gbc_panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnPrimero = new JButton("<<");
@@ -258,7 +240,7 @@ public class PanelFabricantes {
 		int opcionElegida = JOptionPane.showOptionDialog(null, "¿Desea eliminar?", "Gestión venta de coches", 
 		        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, posiblesRespuestas, posiblesRespuestas[1]);
 	    if(opcionElegida == 0) {
-	    	int regsAfectados = ControladorCoche.getInstance().borrar(this.actual.getId());
+	    	int regsAfectados = ControladorFabricante.getInstance().borrar(this.actual.getId());
 	    	if (regsAfectados > 0) {
 	    		vaciarCampos();
 	    		JOptionPane.showMessageDialog(null, "Eliminado correctamente");
