@@ -18,14 +18,10 @@ import java.awt.event.ActionEvent;
 
 public class PanelVentas {
 
-	Fabricante actual = null;
+	Venta actual = null;
 	
 	private JFrame frame;
 	private JTextField jtfId;
-	private JLabel lblNewLabel_1;
-	private JTextField jtfCif;
-	private JLabel lblNewLabel_2;
-	private JTextField jtfNombre;
 	private JPanel panel;
 	private JButton btnPrimero;
 	private JButton btnAnterior;
@@ -34,6 +30,16 @@ public class PanelVentas {
 	private JButton btnGuardar;
 	private JButton btnNuevo;
 	private JButton btnBorrar;
+	private JLabel lblIdCliente;
+	private JTextField jtfIdCliente;
+	private JLabel lblIdConcesionario;
+	private JTextField jtfIdConcesionario;
+	private JLabel lblIdCoche;
+	private JTextField jtfIdCoche;
+	private JLabel lblFecha;
+	private JTextField jtfFecha;
+	private JLabel lblPrecioVenta;
+	private JTextField jtfPrecioVenta;
 
 	/**
 	 * Launch the application.
@@ -56,7 +62,7 @@ public class PanelVentas {
 	 */
 	public PanelVentas() {
 		initialize();
-		this.actual = ControladorFabricante.getInstance().findPrimero();
+		this.actual = ControladorVenta.getInstance().findPrimero();
 		cargarActualEnPantalla();
 	}
 
@@ -66,8 +72,11 @@ public class PanelVentas {
 	private void cargarActualEnPantalla() {
 		if (this.actual != null) {
 			this.jtfId.setText("" + this.actual.getId());
-			this.jtfCif.setText(this.actual.getCif());
-			this.jtfNombre.setText(this.actual.getNombre());
+			this.jtfIdCliente.setText("" + this.actual.getIdCliente());
+			this.jtfIdConcesionario.setText("" + this.actual.getIdConcesionario());
+			this.jtfIdCoche.setText("" + this.actual.getIdCoche());
+			this.jtfFecha.setText(this.actual.getFecha());
+			this.jtfPrecioVenta.setText("" + this.actual.getPrecioVenta());
 		}
 	}
 	
@@ -76,8 +85,11 @@ public class PanelVentas {
 	 */
 	private void cargarActualDesdePantalla() {
 		this.actual.setId(Integer.parseInt(jtfId.getText()));
-		this.actual.setCif(jtfCif.getText());
-		this.actual.setNombre(jtfNombre.getText());
+		this.actual.setIdCliente(Integer.parseInt(jtfIdCliente.getText()));
+		this.actual.setIdConcesionario(Integer.parseInt(jtfIdConcesionario.getText()));
+		this.actual.setIdCoche(Integer.parseInt(jtfIdCoche.getText()));
+		this.actual.setFecha(jtfFecha.getText());
+		this.actual.setPrecioVenta(Integer.parseInt(jtfPrecioVenta.getText()));
 	}
 	
 	/**
@@ -85,13 +97,13 @@ public class PanelVentas {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 525, 300);
+		frame.setBounds(100, 100, 525, 212);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
 		JLabel lblNewLabel = new JLabel("Id:");
@@ -112,55 +124,104 @@ public class PanelVentas {
 		frame.getContentPane().add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
-		lblNewLabel_1 = new JLabel("CIF:");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabel_1.fill = GridBagConstraints.VERTICAL;
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_1.gridx = 0;
-		gbc_lblNewLabel_1.gridy = 1;
-		frame.getContentPane().add(lblNewLabel_1, gbc_lblNewLabel_1);
+		lblIdCliente = new JLabel("IdCliente: ");
+		GridBagConstraints gbc_lblIdCliente = new GridBagConstraints();
+		gbc_lblIdCliente.anchor = GridBagConstraints.EAST;
+		gbc_lblIdCliente.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIdCliente.gridx = 0;
+		gbc_lblIdCliente.gridy = 1;
+		frame.getContentPane().add(lblIdCliente, gbc_lblIdCliente);
 		
-		jtfCif = new JTextField();
-		GridBagConstraints gbc_jtfCif = new GridBagConstraints();
-		gbc_jtfCif.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfCif.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfCif.gridx = 1;
-		gbc_jtfCif.gridy = 1;
-		frame.getContentPane().add(jtfCif, gbc_jtfCif);
-		jtfCif.setColumns(10);
+		jtfIdCliente = new JTextField();
+		GridBagConstraints gbc_jtfIdCliente = new GridBagConstraints();
+		gbc_jtfIdCliente.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfIdCliente.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfIdCliente.gridx = 1;
+		gbc_jtfIdCliente.gridy = 1;
+		frame.getContentPane().add(jtfIdCliente, gbc_jtfIdCliente);
+		jtfIdCliente.setColumns(10);
 		
-		lblNewLabel_2 = new JLabel("Nombre:");
-		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_2.gridx = 0;
-		gbc_lblNewLabel_2.gridy = 2;
-		frame.getContentPane().add(lblNewLabel_2, gbc_lblNewLabel_2);
+		lblIdConcesionario = new JLabel("IdConcesionario: ");
+		GridBagConstraints gbc_lblIdConcesionario = new GridBagConstraints();
+		gbc_lblIdConcesionario.anchor = GridBagConstraints.EAST;
+		gbc_lblIdConcesionario.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIdConcesionario.gridx = 0;
+		gbc_lblIdConcesionario.gridy = 2;
+		frame.getContentPane().add(lblIdConcesionario, gbc_lblIdConcesionario);
 		
-		jtfNombre = new JTextField();
-		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
-		gbc_jtfNombre.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfNombre.gridx = 1;
-		gbc_jtfNombre.gridy = 2;
-		frame.getContentPane().add(jtfNombre, gbc_jtfNombre);
-		jtfNombre.setColumns(10);
+		jtfIdConcesionario = new JTextField();
+		GridBagConstraints gbc_jtfIdConcesionario = new GridBagConstraints();
+		gbc_jtfIdConcesionario.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfIdConcesionario.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfIdConcesionario.gridx = 1;
+		gbc_jtfIdConcesionario.gridy = 2;
+		frame.getContentPane().add(jtfIdConcesionario, gbc_jtfIdConcesionario);
+		jtfIdConcesionario.setColumns(10);
+		
+		lblIdCoche = new JLabel("IdCoche: ");
+		GridBagConstraints gbc_lblIdCoche = new GridBagConstraints();
+		gbc_lblIdCoche.anchor = GridBagConstraints.EAST;
+		gbc_lblIdCoche.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIdCoche.gridx = 0;
+		gbc_lblIdCoche.gridy = 3;
+		frame.getContentPane().add(lblIdCoche, gbc_lblIdCoche);
+		
+		jtfIdCoche = new JTextField();
+		GridBagConstraints gbc_jtfIdCoche = new GridBagConstraints();
+		gbc_jtfIdCoche.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfIdCoche.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfIdCoche.gridx = 1;
+		gbc_jtfIdCoche.gridy = 3;
+		frame.getContentPane().add(jtfIdCoche, gbc_jtfIdCoche);
+		jtfIdCoche.setColumns(10);
+		
+		lblFecha = new JLabel("Fecha: ");
+		GridBagConstraints gbc_lblFecha = new GridBagConstraints();
+		gbc_lblFecha.anchor = GridBagConstraints.EAST;
+		gbc_lblFecha.insets = new Insets(0, 0, 5, 5);
+		gbc_lblFecha.gridx = 0;
+		gbc_lblFecha.gridy = 4;
+		frame.getContentPane().add(lblFecha, gbc_lblFecha);
+		
+		jtfFecha = new JTextField();
+		GridBagConstraints gbc_jtfFecha = new GridBagConstraints();
+		gbc_jtfFecha.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfFecha.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfFecha.gridx = 1;
+		gbc_jtfFecha.gridy = 4;
+		frame.getContentPane().add(jtfFecha, gbc_jtfFecha);
+		jtfFecha.setColumns(10);
+		
+		lblPrecioVenta = new JLabel("PrecioVenta: ");
+		GridBagConstraints gbc_lblPrecioVenta = new GridBagConstraints();
+		gbc_lblPrecioVenta.anchor = GridBagConstraints.EAST;
+		gbc_lblPrecioVenta.insets = new Insets(0, 0, 5, 5);
+		gbc_lblPrecioVenta.gridx = 0;
+		gbc_lblPrecioVenta.gridy = 5;
+		frame.getContentPane().add(lblPrecioVenta, gbc_lblPrecioVenta);
+		
+		jtfPrecioVenta = new JTextField();
+		GridBagConstraints gbc_jtfPrecioVenta = new GridBagConstraints();
+		gbc_jtfPrecioVenta.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfPrecioVenta.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfPrecioVenta.gridx = 1;
+		gbc_jtfPrecioVenta.gridy = 5;
+		frame.getContentPane().add(jtfPrecioVenta, gbc_jtfPrecioVenta);
+		jtfPrecioVenta.setColumns(10);
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.fill = GridBagConstraints.VERTICAL;
-		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.gridwidth = 2;
+		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 3;
+		gbc_panel.gridy = 6;
 		frame.getContentPane().add(panel, gbc_panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		btnPrimero = new JButton("<<");
 		btnPrimero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actual = ControladorFabricante.getInstance().findPrimero();
+				actual = ControladorVenta.getInstance().findPrimero();
 				cargarActualEnPantalla();
 			}
 		});
@@ -169,7 +230,7 @@ public class PanelVentas {
 		btnAnterior = new JButton("<");
 		btnAnterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actual = ControladorFabricante.getInstance().findAnterior(actual.getId());
+				actual = ControladorVenta.getInstance().findAnterior(actual.getId());
 				cargarActualEnPantalla();
 			}
 		});
@@ -178,7 +239,7 @@ public class PanelVentas {
 		btnSiguiente = new JButton(">");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actual = ControladorFabricante.getInstance().findSiguiente(actual.getId());
+				actual = ControladorVenta.getInstance().findSiguiente(actual.getId());
 				cargarActualEnPantalla();
 			}
 		});
@@ -187,7 +248,7 @@ public class PanelVentas {
 		btnUltimo = new JButton(">>");
 		btnUltimo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actual = ControladorFabricante.getInstance().findUltimo();
+				actual = ControladorVenta.getInstance().findUltimo();
 				cargarActualEnPantalla();
 			}
 		});
@@ -225,13 +286,13 @@ public class PanelVentas {
 		cargarActualDesdePantalla();
 		// Decido si se trata de guardar un registro existente o nuevo
 		if (this.actual.getId() != 0) { // Modificación
-			int regsAfec = ControladorFabricante.getInstance().modificar(this.actual);
+			int regsAfec = ControladorVenta.getInstance().modificar(this.actual);
 			if (regsAfec > 0) {
 				JOptionPane.showMessageDialog(null, "Registro modificado correctamente");
 			}
 		}
 		else { // Alta -  nuevo
-			int idNuevoReg = ControladorFabricante.getInstance().nuevo(this.actual);
+			int idNuevoReg = ControladorVenta.getInstance().nuevo(this.actual);
 			if (idNuevoReg > 0) {
 				this.jtfId.setText("" + idNuevoReg);
 				JOptionPane.showMessageDialog(null, "Registro insertado correctamente");
@@ -244,8 +305,11 @@ public class PanelVentas {
 	 */
 	private void vaciarCampos() {
 		this.jtfId.setText("0");
-		this.jtfCif.setText("");
-		this.jtfNombre.setText("");
+		this.jtfIdCliente.setText("0");
+		this.jtfIdConcesionario.setText("0");
+		this.jtfIdCoche.setText("0");
+		this.jtfFecha.setText("");
+		this.jtfPrecioVenta.setText("0");
 	}
 	
 	/**
@@ -257,7 +321,7 @@ public class PanelVentas {
 		int opcionElegida = JOptionPane.showOptionDialog(null, "¿Desea eliminar?", "Gestión venta de coches", 
 		        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, posiblesRespuestas, posiblesRespuestas[1]);
 	    if(opcionElegida == 0) {
-	    	int regsAfectados = ControladorCoche.getInstance().borrar(this.actual.getId());
+	    	int regsAfectados = ControladorVenta.getInstance().borrar(this.actual.getId());
 	    	if (regsAfectados > 0) {
 	    		vaciarCampos();
 	    		JOptionPane.showMessageDialog(null, "Eliminado correctamente");

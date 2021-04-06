@@ -20,7 +20,7 @@ import javax.swing.JButton;
 import java.awt.Button;
 import java.awt.GridLayout;
 
-public class VentanaFrabricantes {
+public class VentanaFabricantes {
 
 	Fabricante actual = null;
 	
