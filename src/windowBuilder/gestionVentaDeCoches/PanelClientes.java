@@ -89,10 +89,10 @@ public class PanelClientes extends JPanel {
 	 */
 	private void initialize() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {0, 0, 0};
-		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[] {135, 0, 10, 0};
+		gridBagLayout.rowHeights = new int[] {10, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		this.setLayout(gridBagLayout);
 		
 		JLabel lblId = new JLabel(" Id: ");
@@ -100,16 +100,16 @@ public class PanelClientes extends JPanel {
 		gbc_lblId.insets = new Insets(0, 0, 5, 5);
 		gbc_lblId.anchor = GridBagConstraints.EAST;
 		gbc_lblId.gridx = 0;
-		gbc_lblId.gridy = 0;
+		gbc_lblId.gridy = 1;
 		this.add(lblId, gbc_lblId);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
 		GridBagConstraints gbc_jtfId = new GridBagConstraints();
-		gbc_jtfId.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfId.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
-		gbc_jtfId.gridy = 0;
+		gbc_jtfId.gridy = 1;
 		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
@@ -118,49 +118,49 @@ public class PanelClientes extends JPanel {
 		gbc_lblNombre.anchor = GridBagConstraints.EAST;
 		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNombre.gridx = 0;
-		gbc_lblNombre.gridy = 1;
+		gbc_lblNombre.gridy = 2;
 		this.add(lblNombre, gbc_lblNombre);
 		
 		jtfNombre = new JTextField();
 		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
-		gbc_jtfNombre.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfNombre.gridx = 1;
-		gbc_jtfNombre.gridy = 1;
+		gbc_jtfNombre.gridy = 2;
 		this.add(jtfNombre, gbc_jtfNombre);
 		jtfNombre.setColumns(10);
 		
-		lblApellidos = new JLabel("Apellidos: ");
+		lblApellidos = new JLabel(" Apellidos: ");
 		GridBagConstraints gbc_lblApellidos = new GridBagConstraints();
 		gbc_lblApellidos.anchor = GridBagConstraints.EAST;
 		gbc_lblApellidos.insets = new Insets(0, 0, 5, 5);
 		gbc_lblApellidos.gridx = 0;
-		gbc_lblApellidos.gridy = 2;
+		gbc_lblApellidos.gridy = 3;
 		this.add(lblApellidos, gbc_lblApellidos);
 		
 		jtfApellidos = new JTextField();
 		GridBagConstraints gbc_jtfApellidos = new GridBagConstraints();
-		gbc_jtfApellidos.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfApellidos.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfApellidos.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfApellidos.gridx = 1;
-		gbc_jtfApellidos.gridy = 2;
+		gbc_jtfApellidos.gridy = 3;
 		this.add(jtfApellidos, gbc_jtfApellidos);
 		jtfApellidos.setColumns(10);
 		
-		lblLocalidad = new JLabel("Localidad: ");
+		lblLocalidad = new JLabel(" Localidad: ");
 		GridBagConstraints gbc_lblLocalidad = new GridBagConstraints();
 		gbc_lblLocalidad.anchor = GridBagConstraints.EAST;
 		gbc_lblLocalidad.insets = new Insets(0, 0, 5, 5);
 		gbc_lblLocalidad.gridx = 0;
-		gbc_lblLocalidad.gridy = 3;
+		gbc_lblLocalidad.gridy = 4;
 		this.add(lblLocalidad, gbc_lblLocalidad);
 		
 		jtfLocalidad = new JTextField();
 		GridBagConstraints gbc_jtfLocalidad = new GridBagConstraints();
-		gbc_jtfLocalidad.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfLocalidad.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfLocalidad.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfLocalidad.gridx = 1;
-		gbc_jtfLocalidad.gridy = 3;
+		gbc_jtfLocalidad.gridy = 4;
 		this.add(jtfLocalidad, gbc_jtfLocalidad);
 		jtfLocalidad.setColumns(10);
 		
@@ -169,41 +169,42 @@ public class PanelClientes extends JPanel {
 		gbc_lblDniNie.anchor = GridBagConstraints.EAST;
 		gbc_lblDniNie.insets = new Insets(0, 0, 5, 5);
 		gbc_lblDniNie.gridx = 0;
-		gbc_lblDniNie.gridy = 4;
+		gbc_lblDniNie.gridy = 5;
 		this.add(lblDniNie, gbc_lblDniNie);
 		
 		jtfDniNie = new JTextField();
 		GridBagConstraints gbc_jtfDniNie = new GridBagConstraints();
-		gbc_jtfDniNie.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfDniNie.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfDniNie.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfDniNie.gridx = 1;
-		gbc_jtfDniNie.gridy = 4;
+		gbc_jtfDniNie.gridy = 5;
 		this.add(jtfDniNie, gbc_jtfDniNie);
 		jtfDniNie.setColumns(10);
 		
-		lblFechaNac = new JLabel("FechaNac: ");
+		lblFechaNac = new JLabel(" FechaNac: ");
 		GridBagConstraints gbc_lblFechaNac = new GridBagConstraints();
-		gbc_lblFechaNac.anchor = GridBagConstraints.NORTHEAST;
+		gbc_lblFechaNac.anchor = GridBagConstraints.EAST;
 		gbc_lblFechaNac.insets = new Insets(0, 0, 5, 5);
 		gbc_lblFechaNac.gridx = 0;
-		gbc_lblFechaNac.gridy = 5;
+		gbc_lblFechaNac.gridy = 6;
 		this.add(lblFechaNac, gbc_lblFechaNac);
 		
 		jtfFechaNac = new JTextField();
 		GridBagConstraints gbc_jtfFechaNac = new GridBagConstraints();
-		gbc_jtfFechaNac.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfFechaNac.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfFechaNac.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfFechaNac.gridx = 1;
-		gbc_jtfFechaNac.gridy = 5;
+		gbc_jtfFechaNac.gridy = 6;
 		this.add(jtfFechaNac, gbc_jtfFechaNac);
 		jtfFechaNac.setColumns(10);
 		
 		chckbxActivo = new JCheckBox("Activo");
 //		chckbxActivo.setSelected(true);
 		GridBagConstraints gbc_chckbxActivo = new GridBagConstraints();
+		gbc_chckbxActivo.anchor = GridBagConstraints.EAST;
 		gbc_chckbxActivo.insets = new Insets(0, 0, 5, 5);
 		gbc_chckbxActivo.gridx = 0;
-		gbc_chckbxActivo.gridy = 6;
+		gbc_chckbxActivo.gridy = 7;
 		this.add(chckbxActivo, gbc_chckbxActivo);
 		
 
@@ -213,12 +214,12 @@ public class PanelClientes extends JPanel {
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.anchor = GridBagConstraints.SOUTH;
-		gbc_panel.gridwidth = 2;
+		gbc_panel.gridwidth = 3;
 		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 7;
+		gbc_panel.gridy = 8;
 		this.add(panel, gbc_panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 10));
 		
 		btnPrimero = new JButton("<<");
 		btnPrimero.addActionListener(new ActionListener() {

@@ -10,7 +10,7 @@ import javax.swing.JMenuItem;
 public class MenuBar extends JMenuBar {
 
 	public MenuBar() {
-		JMenu menuArchivo = new JMenu("Archivo");
+		JMenu menuArchivo = new JMenu("Mostrar Tabla...");
 		this.add(menuArchivo);
 		
 		String entidades[] = new String[] {"Fabricantes", "Coches", "Clientes", "Concesionarios", "Ventas"};

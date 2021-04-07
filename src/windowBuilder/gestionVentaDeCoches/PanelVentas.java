@@ -81,27 +81,27 @@ public class PanelVentas extends JPanel {
 	 */
 	private void initialize() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0};
-		gridBagLayout.rowHeights = new int[] {0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{135, 0, 10, 0};
+		gridBagLayout.rowHeights = new int[] {10, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		this.setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Id:");
+		JLabel lblNewLabel = new JLabel("Id: ");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 0;
+		gbc_lblNewLabel.gridy = 1;
 		this.add(lblNewLabel, gbc_lblNewLabel);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
 		GridBagConstraints gbc_jtfId = new GridBagConstraints();
-		gbc_jtfId.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfId.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
-		gbc_jtfId.gridy = 0;
+		gbc_jtfId.gridy = 1;
 		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
@@ -110,15 +110,15 @@ public class PanelVentas extends JPanel {
 		gbc_lblIdCliente.anchor = GridBagConstraints.EAST;
 		gbc_lblIdCliente.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdCliente.gridx = 0;
-		gbc_lblIdCliente.gridy = 1;
+		gbc_lblIdCliente.gridy = 2;
 		this.add(lblIdCliente, gbc_lblIdCliente);
 		
 		jtfIdCliente = new JTextField();
 		GridBagConstraints gbc_jtfIdCliente = new GridBagConstraints();
-		gbc_jtfIdCliente.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfIdCliente.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfIdCliente.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdCliente.gridx = 1;
-		gbc_jtfIdCliente.gridy = 1;
+		gbc_jtfIdCliente.gridy = 2;
 		this.add(jtfIdCliente, gbc_jtfIdCliente);
 		jtfIdCliente.setColumns(10);
 		
@@ -127,15 +127,15 @@ public class PanelVentas extends JPanel {
 		gbc_lblIdConcesionario.anchor = GridBagConstraints.EAST;
 		gbc_lblIdConcesionario.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdConcesionario.gridx = 0;
-		gbc_lblIdConcesionario.gridy = 2;
+		gbc_lblIdConcesionario.gridy = 3;
 		this.add(lblIdConcesionario, gbc_lblIdConcesionario);
 		
 		jtfIdConcesionario = new JTextField();
 		GridBagConstraints gbc_jtfIdConcesionario = new GridBagConstraints();
-		gbc_jtfIdConcesionario.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfIdConcesionario.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfIdConcesionario.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdConcesionario.gridx = 1;
-		gbc_jtfIdConcesionario.gridy = 2;
+		gbc_jtfIdConcesionario.gridy = 3;
 		this.add(jtfIdConcesionario, gbc_jtfIdConcesionario);
 		jtfIdConcesionario.setColumns(10);
 		
@@ -144,15 +144,15 @@ public class PanelVentas extends JPanel {
 		gbc_lblIdCoche.anchor = GridBagConstraints.EAST;
 		gbc_lblIdCoche.insets = new Insets(0, 0, 5, 5);
 		gbc_lblIdCoche.gridx = 0;
-		gbc_lblIdCoche.gridy = 3;
+		gbc_lblIdCoche.gridy = 4;
 		this.add(lblIdCoche, gbc_lblIdCoche);
 		
 		jtfIdCoche = new JTextField();
 		GridBagConstraints gbc_jtfIdCoche = new GridBagConstraints();
-		gbc_jtfIdCoche.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfIdCoche.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfIdCoche.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfIdCoche.gridx = 1;
-		gbc_jtfIdCoche.gridy = 3;
+		gbc_jtfIdCoche.gridy = 4;
 		this.add(jtfIdCoche, gbc_jtfIdCoche);
 		jtfIdCoche.setColumns(10);
 		
@@ -161,15 +161,15 @@ public class PanelVentas extends JPanel {
 		gbc_lblFecha.anchor = GridBagConstraints.EAST;
 		gbc_lblFecha.insets = new Insets(0, 0, 5, 5);
 		gbc_lblFecha.gridx = 0;
-		gbc_lblFecha.gridy = 4;
+		gbc_lblFecha.gridy = 5;
 		this.add(lblFecha, gbc_lblFecha);
 		
 		jtfFecha = new JTextField();
 		GridBagConstraints gbc_jtfFecha = new GridBagConstraints();
-		gbc_jtfFecha.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfFecha.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfFecha.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfFecha.gridx = 1;
-		gbc_jtfFecha.gridy = 4;
+		gbc_jtfFecha.gridy = 5;
 		this.add(jtfFecha, gbc_jtfFecha);
 		jtfFecha.setColumns(10);
 		
@@ -178,26 +178,27 @@ public class PanelVentas extends JPanel {
 		gbc_lblPrecioVenta.anchor = GridBagConstraints.EAST;
 		gbc_lblPrecioVenta.insets = new Insets(0, 0, 5, 5);
 		gbc_lblPrecioVenta.gridx = 0;
-		gbc_lblPrecioVenta.gridy = 5;
+		gbc_lblPrecioVenta.gridy = 6;
 		this.add(lblPrecioVenta, gbc_lblPrecioVenta);
 		
 		jtfPrecioVenta = new JTextField();
 		GridBagConstraints gbc_jtfPrecioVenta = new GridBagConstraints();
-		gbc_jtfPrecioVenta.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfPrecioVenta.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfPrecioVenta.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfPrecioVenta.gridx = 1;
-		gbc_jtfPrecioVenta.gridy = 5;
+		gbc_jtfPrecioVenta.gridy = 6;
 		this.add(jtfPrecioVenta, gbc_jtfPrecioVenta);
 		jtfPrecioVenta.setColumns(10);
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.gridwidth = 2;
-		gbc_panel.fill = GridBagConstraints.BOTH;
+		gbc_panel.anchor = GridBagConstraints.SOUTH;
+		gbc_panel.gridwidth = 3;
+		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 6;
+		gbc_panel.gridy = 7;
 		this.add(panel, gbc_panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 10));
 		
 		btnPrimero = new JButton("<<");
 		btnPrimero.addActionListener(new ActionListener() {

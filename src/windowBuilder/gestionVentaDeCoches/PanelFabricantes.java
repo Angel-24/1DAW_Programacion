@@ -69,76 +69,73 @@ public class PanelFabricantes extends JPanel {
 	 */
 	private void initialize() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWidths = new int[]{135, 0, 10, 0};
+		gridBagLayout.rowHeights = new int[]{10, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		this.setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("Id:");
+		JLabel lblNewLabel = new JLabel("Id: ");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 0;
+		gbc_lblNewLabel.gridy = 1;
 		this.add(lblNewLabel, gbc_lblNewLabel);
 		
 		jtfId = new JTextField();
 		jtfId.setEnabled(false);
 		GridBagConstraints gbc_jtfId = new GridBagConstraints();
-		gbc_jtfId.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfId.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfId.gridx = 1;
-		gbc_jtfId.gridy = 0;
+		gbc_jtfId.gridy = 1;
 		this.add(jtfId, gbc_jtfId);
 		jtfId.setColumns(10);
 		
 		lblNewLabel_1 = new JLabel("CIF:");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabel_1.fill = GridBagConstraints.VERTICAL;
 		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_1.gridx = 0;
-		gbc_lblNewLabel_1.gridy = 1;
+		gbc_lblNewLabel_1.gridy = 2;
 		this.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
 		jtfCif = new JTextField();
 		GridBagConstraints gbc_jtfCif = new GridBagConstraints();
-		gbc_jtfCif.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfCif.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfCif.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfCif.gridx = 1;
-		gbc_jtfCif.gridy = 1;
+		gbc_jtfCif.gridy = 2;
 		this.add(jtfCif, gbc_jtfCif);
 		jtfCif.setColumns(10);
 		
-		lblNewLabel_2 = new JLabel("Nombre:");
+		lblNewLabel_2 = new JLabel(" Nombre:");
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_2.gridx = 0;
-		gbc_lblNewLabel_2.gridy = 2;
+		gbc_lblNewLabel_2.gridy = 3;
 		this.add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
 		jtfNombre = new JTextField();
 		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
-		gbc_jtfNombre.insets = new Insets(0, 0, 5, 0);
+		gbc_jtfNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_jtfNombre.gridx = 1;
-		gbc_jtfNombre.gridy = 2;
+		gbc_jtfNombre.gridy = 3;
 		this.add(jtfNombre, gbc_jtfNombre);
 		jtfNombre.setColumns(10);
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.anchor = GridBagConstraints.SOUTH;
-		gbc_panel.gridheight = 2;
 		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel.insets = new Insets(0, 0, 5, 0);
-		gbc_panel.gridwidth = 2;
+		gbc_panel.gridwidth = 3;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 3;
+		gbc_panel.gridy = 4;
 		this.add(panel, gbc_panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 10));
 		
 		btnPrimero = new JButton("<<");
 		btnPrimero.addActionListener(new ActionListener() {

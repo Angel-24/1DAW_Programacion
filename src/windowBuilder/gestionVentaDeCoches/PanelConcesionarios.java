@@ -46,111 +46,6 @@ public class PanelConcesionarios extends JPanel {
 		super();
 		initialize();
 		this.actual = ControladorConcesionario.getInstance().findPrimero();
-		cargarActualEnPantalla();
-	}
-
-	/**
-	 * 
-	 */
-	private void cargarActualEnPantalla() {
-		if (this.actual != null) {
-			this.jtfId.setText("" + this.actual.getId());
-			this.jtfCif.setText(this.actual.getCif());
-			this.jtfNombre.setText(this.actual.getNombre());
-			this.jtfLocalidad.setText(this.actual.getLocalidad());
-		}
-	}
-	
-	/**
-	 * 
-	 */
-	private void cargarActualDesdePantalla() {
-		this.actual.setId(Integer.parseInt(jtfId.getText()));
-		this.actual.setCif(jtfCif.getText());
-		this.actual.setNombre(jtfNombre.getText());
-		this.actual.setLocalidad(jtfLocalidad.getText());
-	}
-	
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {0, 0, 0};
-		gridBagLayout.rowHeights = new int[] {30, 0, 0, 30};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
-		this.setLayout(gridBagLayout);
-		
-		JLabel lblId = new JLabel(" Id: ");
-		GridBagConstraints gbc_lblId = new GridBagConstraints();
-		gbc_lblId.insets = new Insets(0, 0, 5, 5);
-		gbc_lblId.anchor = GridBagConstraints.NORTHEAST;
-		gbc_lblId.gridx = 0;
-		gbc_lblId.gridy = 0;
-		this.add(lblId, gbc_lblId);
-		
-		jtfId = new JTextField();
-		jtfId.setEnabled(false);
-		GridBagConstraints gbc_jtfId = new GridBagConstraints();
-		gbc_jtfId.anchor = GridBagConstraints.NORTH;
-		gbc_jtfId.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfId.gridx = 1;
-		gbc_jtfId.gridy = 0;
-		this.add(jtfId, gbc_jtfId);
-		jtfId.setColumns(10);
-		
-		lblCif = new JLabel("Cif: ");
-		GridBagConstraints gbc_lblCif = new GridBagConstraints();
-		gbc_lblCif.anchor = GridBagConstraints.EAST;
-		gbc_lblCif.insets = new Insets(0, 0, 5, 5);
-		gbc_lblCif.gridx = 0;
-		gbc_lblCif.gridy = 1;
-		this.add(lblCif, gbc_lblCif);
-		
-		jtfCif = new JTextField();
-		GridBagConstraints gbc_jtfCif = new GridBagConstraints();
-		gbc_jtfCif.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfCif.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfCif.gridx = 1;
-		gbc_jtfCif.gridy = 1;
-		this.add(jtfCif, gbc_jtfCif);
-		jtfCif.setColumns(10);
-		
-		lblNombre = new JLabel("Nombre: ");
-		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
-		gbc_lblNombre.anchor = GridBagConstraints.EAST;
-		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNombre.gridx = 0;
-		gbc_lblNombre.gridy = 2;
-		this.add(lblNombre, gbc_lblNombre);
-		
-		jtfNombre = new JTextField();
-		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
-		gbc_jtfNombre.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfNombre.gridx = 1;
-		gbc_jtfNombre.gridy = 2;
-		this.add(jtfNombre, gbc_jtfNombre);
-		jtfNombre.setColumns(10);
-		
-		lblLocalidad = new JLabel("Localidad: ");
-		GridBagConstraints gbc_lblLocalidad = new GridBagConstraints();
-		gbc_lblLocalidad.anchor = GridBagConstraints.EAST;
-		gbc_lblLocalidad.insets = new Insets(0, 0, 5, 5);
-		gbc_lblLocalidad.gridx = 0;
-		gbc_lblLocalidad.gridy = 3;
-		this.add(lblLocalidad, gbc_lblLocalidad);
-		
-		jtfLocalidad = new JTextField();
-		GridBagConstraints gbc_jtfLocalidad = new GridBagConstraints();
-		gbc_jtfLocalidad.insets = new Insets(0, 0, 5, 0);
-		gbc_jtfLocalidad.fill = GridBagConstraints.HORIZONTAL;
-		gbc_jtfLocalidad.gridx = 1;
-		gbc_jtfLocalidad.gridy = 3;
-		this.add(jtfLocalidad, gbc_jtfLocalidad);
-		jtfLocalidad.setColumns(10);
 		
 
 		
@@ -158,12 +53,12 @@ public class PanelConcesionarios extends JPanel {
 		
 		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.gridwidth = 2;
-		gbc_panel.fill = GridBagConstraints.BOTH;
+		gbc_panel.anchor = GridBagConstraints.SOUTH;
+		gbc_panel.gridwidth = 3;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 4;
+		gbc_panel.gridy = 5;
 		this.add(panel, gbc_panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 10));
 		
 		btnPrimero = new JButton("<<");
 		btnPrimero.addActionListener(new ActionListener() {
@@ -224,6 +119,114 @@ public class PanelConcesionarios extends JPanel {
 			}
 		});
 		panel.add(btnBorrar);
+		cargarActualEnPantalla();
+	}
+
+	/**
+	 * 
+	 */
+	private void cargarActualEnPantalla() {
+		if (this.actual != null) {
+			this.jtfId.setText("" + this.actual.getId());
+			this.jtfCif.setText(this.actual.getCif());
+			this.jtfNombre.setText(this.actual.getNombre());
+			this.jtfLocalidad.setText(this.actual.getLocalidad());
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	private void cargarActualDesdePantalla() {
+		this.actual.setId(Integer.parseInt(jtfId.getText()));
+		this.actual.setCif(jtfCif.getText());
+		this.actual.setNombre(jtfNombre.getText());
+		this.actual.setLocalidad(jtfLocalidad.getText());
+	}
+	
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		GridBagLayout gridBagLayout = new GridBagLayout();
+		gridBagLayout.columnWidths = new int[] {135, 0, 10, 0};
+		gridBagLayout.rowHeights = new int[] {10, 0, 0, 0, 0, 0};
+		gridBagLayout.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0};
+		this.setLayout(gridBagLayout);
+		
+		JLabel lblId = new JLabel(" Id: ");
+		GridBagConstraints gbc_lblId = new GridBagConstraints();
+		gbc_lblId.insets = new Insets(0, 0, 5, 5);
+		gbc_lblId.anchor = GridBagConstraints.EAST;
+		gbc_lblId.gridx = 0;
+		gbc_lblId.gridy = 1;
+		this.add(lblId, gbc_lblId);
+		
+		jtfId = new JTextField();
+		jtfId.setEnabled(false);
+		GridBagConstraints gbc_jtfId = new GridBagConstraints();
+		gbc_jtfId.anchor = GridBagConstraints.NORTH;
+		gbc_jtfId.insets = new Insets(0, 0, 5, 5);
+		gbc_jtfId.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfId.gridx = 1;
+		gbc_jtfId.gridy = 1;
+		this.add(jtfId, gbc_jtfId);
+		jtfId.setColumns(10);
+		
+		lblCif = new JLabel(" Cif: ");
+		GridBagConstraints gbc_lblCif = new GridBagConstraints();
+		gbc_lblCif.anchor = GridBagConstraints.EAST;
+		gbc_lblCif.insets = new Insets(0, 0, 5, 5);
+		gbc_lblCif.gridx = 0;
+		gbc_lblCif.gridy = 2;
+		this.add(lblCif, gbc_lblCif);
+		
+		jtfCif = new JTextField();
+		GridBagConstraints gbc_jtfCif = new GridBagConstraints();
+		gbc_jtfCif.anchor = GridBagConstraints.NORTH;
+		gbc_jtfCif.insets = new Insets(0, 0, 5, 5);
+		gbc_jtfCif.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfCif.gridx = 1;
+		gbc_jtfCif.gridy = 2;
+		this.add(jtfCif, gbc_jtfCif);
+		jtfCif.setColumns(10);
+		
+		lblNombre = new JLabel(" Nombre: ");
+		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
+		gbc_lblNombre.anchor = GridBagConstraints.EAST;
+		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNombre.gridx = 0;
+		gbc_lblNombre.gridy = 3;
+		this.add(lblNombre, gbc_lblNombre);
+		
+		jtfNombre = new JTextField();
+		GridBagConstraints gbc_jtfNombre = new GridBagConstraints();
+		gbc_jtfNombre.anchor = GridBagConstraints.NORTH;
+		gbc_jtfNombre.insets = new Insets(0, 0, 5, 5);
+		gbc_jtfNombre.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfNombre.gridx = 1;
+		gbc_jtfNombre.gridy = 3;
+		this.add(jtfNombre, gbc_jtfNombre);
+		jtfNombre.setColumns(10);
+		
+		lblLocalidad = new JLabel(" Localidad: ");
+		GridBagConstraints gbc_lblLocalidad = new GridBagConstraints();
+		gbc_lblLocalidad.anchor = GridBagConstraints.EAST;
+		gbc_lblLocalidad.insets = new Insets(0, 0, 5, 5);
+		gbc_lblLocalidad.gridx = 0;
+		gbc_lblLocalidad.gridy = 4;
+		this.add(lblLocalidad, gbc_lblLocalidad);
+		
+		jtfLocalidad = new JTextField();
+		GridBagConstraints gbc_jtfLocalidad = new GridBagConstraints();
+		gbc_jtfLocalidad.anchor = GridBagConstraints.NORTH;
+		gbc_jtfLocalidad.insets = new Insets(0, 0, 5, 5);
+		gbc_jtfLocalidad.fill = GridBagConstraints.HORIZONTAL;
+		gbc_jtfLocalidad.gridx = 1;
+		gbc_jtfLocalidad.gridy = 4;
+		this.add(jtfLocalidad, gbc_jtfLocalidad);
+		jtfLocalidad.setColumns(10);
 	}
 
 	/**

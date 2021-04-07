@@ -30,7 +30,7 @@ public class VENTANA extends JFrame {
 	 */
 	public VENTANA() {
 		super("Gestión de venta de coches");
-		this.setBounds(0, 0, 600, 400);
+		this.setBounds(400, 250, 600, 400);
 		
 		this.setJMenuBar(new MenuBar());
 		
